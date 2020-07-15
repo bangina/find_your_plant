@@ -16,20 +16,13 @@ const Test = () => {
   };
 
   const onClickHandler = () => {
-    const url =
-      "https://cors-anywhere.herokuapp.com/http://api.nongsaro.go.kr/service/garden/gardenList?apiKey=20200630BP2VOQ4XJKJ48VMYQ3AJTQ" +
-      "&lightChkVal=" +
-      condition.light +
-      "&grwhstleChkVal=" +
-      condition.grwhstle +
-      "&lefcolrChkVal=" +
-      condition.lefcolr +
-      "&lefmrkChkVal=" +
-      condition.lefmrk;
-    console.log(url);
-
+    const url = `https://cors-anywhere.herokuapp.com/http://api.nongsaro.go.kr/service/garden/gardenList?apiKey=20200630BP2VOQ4XJKJ48VMYQ3AJTQ&lightChkVal=${condition.light}&grwhstleChkVal=${condition.grwhstle}&lefcolrChkVal=${condition.lefcolr}&lefmrkChkVal=${condition.lefmrk}`;
     axios.get(url).then((response) => {
-      setData(response.data);
+      var parseString = require("xml2js").parseString;
+      var xml = response.data;
+      parseString(xml, function (err, result) {
+        setData(result.response.body[0].items[0]);
+      });
     });
   };
 
