@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Question2 = () => {
+const Question2 = (props) => {
   return (
     <form action className="form">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
@@ -9,14 +10,18 @@ const Question2 = () => {
           <span>사무실</span>에 햇빛이 잘 드는 편인가요?
         </p>
         <div className="a-box">
-          <input type="radio" id="q-2-1" name="q-2" />
+          <input type="radio" id="q-2-1" name="light" value="1" onClick={(e)=>{
+            props.onClick(e.target.name, e.target.value)
+          }} />
           <i className="fas fa-sun" />
           <label htmlFor="q-2-1">
             <span>네, 하루에 3시간 이상 들어와요</span>
           </label>
         </div>
         <div className="a-box">
-          <input type="radio" id="q-2-2" name="q-2" />
+          <input type="radio" id="q-2-2" name="light" value="2" onClick={(e)=>{
+            props.onClick(e.target.name, e.target.value)
+          }} />
           <i className="fas fa-cloud-sun" />
           <label htmlFor="q-2-2">
             <span>
@@ -27,11 +32,11 @@ const Question2 = () => {
           </label>
         </div>
       </div>
-      <a href="q3.html" title="다음 질문으로">
         <button className="btn" type="button">
-          다음 질문 👉
+          <Link to="q3">
+          다음 질문 <span role="img" aria-label="">👉</span>
+          </Link>
         </button>
-      </a>
     </form>
   );
 };

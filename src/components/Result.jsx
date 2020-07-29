@@ -1,6 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { Link } from "react-router-dom";
 
-const Result = () => {
+const Result = (props) => {
+  useEffect(() => {
+    console.log(props.condition)
+    return () => {
+      
+    }
+  }, [])
   return (
     <div className="container result">
       {" "}
@@ -47,7 +54,7 @@ const Result = () => {
       <div className="div-line" />
       {/* 식물 소개글 */}
       <h4 className="result-heading">
-        <span>몬스테라</span>를 소개해드릴게요 ☘️
+        <span role="img" aria-label="">몬스테라</span>를 소개해드릴게요 ☘️
       </h4>
       <p className="result-desc result-desc-main">
         몬스테라는 생육 난이도가 높지 않아서 초보자도 기를 수 있는 식물이에 빛을
@@ -97,20 +104,22 @@ const Result = () => {
           <ul className="plant-items">
             <li className="plant-item">
               <img src={require("../imgs/monstera.jpg")} alt="" />
-              <span>🥈</span>
+              <span role="img" aria-label="">🥈</span>
               <p>극락조</p>
             </li>
             <li className="plant-item">
               <img src={require("../imgs/monstera.jpg")} alt="" />
-              <span>🥉</span>
+              <span role="img" aria-label="">🥉</span>
               <p>극락조</p>
             </li>
           </ul>
         </div>
       </div>
-      <a href="q1.html" title="테스트 다시 하기">
-        <button className="btn">테스트 다시 하기♻️</button>
-      </a>
+        <button className="btn">
+          <Link to="/">
+          테스트 다시 하기 <span role="img" aria-label="">♻️</span>
+          </Link>
+          </button>
     </div>
   );
 };

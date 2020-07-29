@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Intro = () => {
   return (
@@ -20,7 +21,9 @@ const Intro = () => {
         />
         <a href="q1.html" className="btn-wrapper">
           <button className="btn" type="button">
-            네! 질문주세요 👌
+            <Link to="/q1">
+            네! 질문주세요 <span role="img" aria-label="">👌</span>
+            </Link>
           </button>
         </a>
       </div>

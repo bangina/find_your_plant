@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StepBar from "./components/StepBar";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -14,6 +14,15 @@ import Question6 from "./components/Question6";
 import Result from "./components/Result";
 
 function App() {
+  
+  const [condition, setCondition] = useState({
+    space: '',
+    light: '',
+    humidity: '',
+    temperature: '',
+    size: '',
+  })
+
   return (
     <Router>
       <div>
@@ -26,36 +35,48 @@ function App() {
           </Route>
           <Route path="/q1">
             <StepBar>
-              <Question1 />
+              <Question1 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/q2">
             <StepBar>
-              <Question2 />
+              <Question2 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/q3">
             <StepBar>
-              <Question3 />
+              <Question3 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/q4">
             <StepBar>
-              <Question4 />
+              <Question4 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/q5">
             <StepBar>
-              <Question5 />
+              <Question5 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/q6">
             <StepBar>
-              <Question6 />
+              <Question6 onClick={(name, value)=>{
+                setCondition({...condition, [name]: value})
+              }}/>
             </StepBar>
           </Route>
           <Route path="/result">
-            <Result />
+            <Result condition={condition}/>
           </Route>
         </Switch>
       </div>

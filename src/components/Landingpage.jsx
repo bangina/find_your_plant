@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Landingpage = () => {
   return (
@@ -20,11 +21,11 @@ const Landingpage = () => {
         <p className="intro-txt">
           혹시 <strong>반려식물</strong> 고르시는 데 도움이 필요하신가요?
         </p>
-        <a href="intro.html" className="btn-wrapper">
           <button className="btn" type="button">
+            <Link to="/intro">
             네! 도와주세요
+            </Link>
           </button>
-        </a>
       </div>
     </div>
   );
