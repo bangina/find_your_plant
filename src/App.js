@@ -1,10 +1,14 @@
 import React from "react";
-import Test from "./Test";
+import StepBar from "./components/StepBar";
+import "./App.css";
+import Question1 from "./components/Question1";
 
 function App() {
   return (
     <div>
-      <Test />
+      <StepBar>
+        <Question1 />
+      </StepBar>
     </div>
   );
 }

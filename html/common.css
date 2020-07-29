@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #333;
 }
 
@@ -44,7 +45,7 @@ p {
   font-size: 18px;
   display: block;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
 }
 
@@ -67,7 +68,7 @@ p {
 .img-container,
 .txt-container {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .img-container {
@@ -243,18 +244,18 @@ p {
   width: 100%;
 }
 
-.qa-container .a-box input:checked ~ label {
+.qa-container .a-box input:checked~label {
   background: #3cba92;
   z-index: -1;
   color: #fff;
   font-weight: bold;
   -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
   -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-.qa-container .a-box input:checked ~ i {
+.qa-container .a-box input:checked~i {
   color: #fff;
 }
 
@@ -271,7 +272,7 @@ p {
   top: 0;
   left: 0;
   -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
-          box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -281,7 +282,7 @@ p {
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .qa-container .a-box i {
@@ -318,7 +319,7 @@ p {
   background: #fff;
   border-radius: 20px;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   border: 1px solid #3cba92;
   position: absolute;
   left: 10px;
@@ -327,7 +328,7 @@ p {
   transition: 0.3s;
 }
 
-.normal-radio input:checked + label::after {
+.normal-radio input:checked+label::after {
   display: inline-block;
   content: "";
   width: 12px;
@@ -339,7 +340,7 @@ p {
   top: 5px;
 }
 
-.normal-radio input:checked + label span {
+.normal-radio input:checked+label span {
   color: #3cba92;
   font-weight: bold;
   font-size: 18px;
@@ -416,7 +417,7 @@ p {
   margin: 2rem auto;
   padding: 2rem;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .result .plant-card .plant-name {
@@ -481,7 +482,7 @@ p {
   float: right;
   height: 6px;
   -webkit-transform: translateY(7px);
-          transform: translateY(7px);
+  transform: translateY(7px);
 }
 
 .result .conditions .step-container-thin .step {
@@ -565,13 +566,13 @@ p {
   width: 30%;
   display: inline-block;
   -webkit-transform: translateX(-60%);
-          transform: translateX(-60%);
+  transform: translateX(-60%);
 }
 
 .result .other-plants .plant-items .plant-item img {
   border-radius: 10px;
   -webkit-box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .result .other-plants .plant-items .plant-item span {
@@ -588,4 +589,5 @@ p {
 .instagram-media {
   max-height: 440px;
 }
+
 /*# sourceMappingURL=common.css.map */
