@@ -99,7 +99,7 @@ function App() {
             />
           </Route>
           <Route path="/result">
-            <Result condition={condition} />
+            <Result condition={condition} data={DATA} />
           </Route>
         </Switch>
       </div>

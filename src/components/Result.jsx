@@ -7,6 +7,9 @@ import "react-rater/lib/react-rater.css";
 const Result = (props) => {
   useEffect(() => {
     console.log(props.condition);
+    console.log(props.data);
+    const plant = props.data.filter((d) => d.cntntsNo == "14911");
+    console.log(plant);
     return () => {};
   }, []);
   return (
