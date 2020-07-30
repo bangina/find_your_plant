@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StepBar from "./components/StepBar";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Landingpage from "./components/Landingpage";
 import Intro from "./components/Intro";
@@ -14,14 +14,14 @@ import Question6 from "./components/Question6";
 import Result from "./components/Result";
 
 function App() {
-  
+  const [step, setStep] = useState(1);
   const [condition, setCondition] = useState({
-    space: '',
-    light: '',
-    humidity: '',
-    temperature: '',
-    size: '',
-  })
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+  });
 
   return (
     <Router>
@@ -34,49 +34,50 @@ function App() {
             <Intro />
           </Route>
           <Route path="/q1">
-            <StepBar>
-              <Question1 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question1
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            ></Question1>
           </Route>
           <Route path="/q2">
-            <StepBar>
-              <Question2 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question2
+              space={condition.space}
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            />
           </Route>
           <Route path="/q3">
-            <StepBar>
-              <Question3 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question3
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            />
           </Route>
           <Route path="/q4">
-            <StepBar>
-              <Question4 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question4
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            />
           </Route>
           <Route path="/q5">
-            <StepBar>
-              <Question5 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question5
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            />
           </Route>
           <Route path="/q6">
-            <StepBar>
-              <Question6 onClick={(name, value)=>{
-                setCondition({...condition, [name]: value})
-              }}/>
-            </StepBar>
+            <Question6
+              onClick={(name, value) => {
+                setCondition({ ...condition, [name]: value });
+              }}
+            />
           </Route>
           <Route path="/result">
-            <Result condition={condition}/>
+            <Result condition={condition} />
           </Route>
         </Switch>
       </div>

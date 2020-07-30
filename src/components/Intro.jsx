@@ -19,13 +19,14 @@ const Intro = () => {
           src={require("../imgs/main_image_02.svg")}
           alt="a woman holding plant"
         />
-        <a href="q1.html" className="btn-wrapper">
-          <button className="btn" type="button">
-            <Link to="/q1">
-            네! 질문주세요 <span role="img" aria-label="">👌</span>
-            </Link>
-          </button>
-        </a>
+        <button className="btn" type="button">
+          <Link to="/q1">
+            네! 질문주세요{" "}
+            <span role="img" aria-label="">
+              👌
+            </span>
+          </Link>
+        </button>
       </div>
     </div>
   );
