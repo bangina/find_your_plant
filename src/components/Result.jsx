@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // 별점 모듈
 import Rater from "react-rater";
@@ -12,12 +12,14 @@ import "swiper/swiper.scss";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
+  const [resultData, setResultData] = useState({});
+  const [test, setTest] = useState("테스트으으으");
+
   useEffect(() => {
-    console.log(props.condition);
-    console.log(props.data);
-    const plant = props.data.filter((d) => d.cntntsNo === "14911");
-    console.log(plant);
-    return () => {};
+    if (props.condition.temperature == 1) {
+      const nextData = props.data.filter((data) => data.cntntsNo == 14663);
+      setResultData(nextData[0]);
+    }
   }, []);
   return (
     <Swiper spaceBetween={0} slidesPerView={1} pagination={{ clickable: true }}>

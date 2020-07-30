@@ -21,11 +21,8 @@ function App() {
     humidity: "",
     temperature: "",
     size: "",
+    difficulty: ""
   });
-
-  useEffect(() => {
-    console.log(DATA);
-  }, []);
 
   return (
     <Router>
@@ -111,7 +108,7 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/result">
-            <Result condition={condition} data={DATA} />
+            <Result condition={condition} data={DATA}/>
           </Route>
         </Switch>
       </div>
