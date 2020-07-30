@@ -13,8 +13,6 @@ import Question6 from "./components/Question6";
 import Result from "./components/Result";
 import DATA from "./data";
 
-// 해솔 푸시 테스트~~~~~~~~~~~~~~~~~``
-
 function App() {
   const [step, setStep] = useState(1);
   const [condition, setCondition] = useState({
@@ -23,11 +21,8 @@ function App() {
     humidity: "",
     temperature: "",
     size: "",
+    difficulty: ""
   });
-
-  useEffect(() => {
-    console.log(DATA);
-  }, []);
 
   return (
     <Router>
@@ -101,7 +96,7 @@ function App() {
             />
           </Route>
           <Route path="/result">
-            <Result condition={condition} />
+            <Result condition={condition} data={DATA}/>
           </Route>
         </Switch>
       </div>

@@ -1,13 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // 별점 모듈
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 
 const Result = (props) => {
+   
+  const [resultData, setResultData] = useState({})
+  const [test, setTest] = useState("테스트으으으")
+  
   useEffect(() => {
-    console.log(props.condition);
-    return () => {};
+    
+    // const filteredData = props.data.filter(data => data.cntntsNo == 14911)
+    // console.log(filteredData);
+
+    if(props.condition.temperature == 1){
+      const nextData = props.data.filter(data => data.cntntsNo == 14663)
+      setResultData(nextData[0])
+    }
+
   }, []);
   return (
     <div className="container result">
@@ -19,7 +30,7 @@ const Result = (props) => {
       {/* 추천식물 카드 */}
       <div className="plant-card">
         <img src={require("../imgs/monstera.jpg")} alt="monstera" />
-        <p className="plant-name">몬스테라</p>
+        <p className="plant-name">{resultData.contntsName}</p>
         <p className="plant-name-en">Monstera</p>
         <div className="tags">
           <span className="tag">독성조심</span>
