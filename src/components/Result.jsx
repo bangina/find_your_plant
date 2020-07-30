@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
 const Result = (props) => {
   useEffect(() => {
-    console.log(props.condition);
-  }, [props.condition]);
+    console.log(props.condition)
+    return () => {
+      
+    }
+  }, [])
   return (
     <div className="container result">
       {" "}
@@ -51,10 +54,7 @@ const Result = (props) => {
       <div className="div-line" />
       {/* 식물 소개글 */}
       <h4 className="result-heading">
-        <span role="img" aria-label="">
-          몬스테라
-        </span>
-        를 소개해드릴게요 ☘️
+        <span role="img" aria-label="">몬스테라</span>를 소개해드릴게요 ☘️
       </h4>
       <p className="result-desc result-desc-main">
         몬스테라는 생육 난이도가 높지 않아서 초보자도 기를 수 있는 식물이에 빛을
@@ -99,39 +99,27 @@ const Result = (props) => {
       {/* 다른 식물 후보 */}
       <div className="other-plants">
         <p className="result-heading text-center">식물은 다다익선!</p>
-        <h3>
-          다른 식물들도 보여주세요{" "}
-          <span role="img" aria-label="">
-            💁‍♂️
-          </span>
-        </h3>
+        <h3>다른 식물들도 보여주세요 💁‍♂️</h3>
         <div className="qa-container pink-chunk">
           <ul className="plant-items">
             <li className="plant-item">
               <img src={require("../imgs/monstera.jpg")} alt="" />
-              <span role="img" aria-label="">
-                🥈
-              </span>
+              <span role="img" aria-label="">🥈</span>
               <p>극락조</p>
             </li>
             <li className="plant-item">
               <img src={require("../imgs/monstera.jpg")} alt="" />
-              <span role="img" aria-label="">
-                🥉
-              </span>
+              <span role="img" aria-label="">🥉</span>
               <p>극락조</p>
             </li>
           </ul>
         </div>
       </div>
-      <button className="btn">
-        <Link to="/">
-          테스트 다시 하기{" "}
-          <span role="img" aria-label="">
-            ♻️
-          </span>
-        </Link>
-      </button>
+        <button className="btn">
+          <Link to="/">
+          테스트 다시 하기 <span role="img" aria-label="">♻️</span>
+          </Link>
+          </button>
     </div>
   );
 };
