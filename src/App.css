@@ -14,6 +14,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 p {
@@ -244,7 +245,7 @@ p {
   width: 100%;
 }
 
-.qa-container .a-box input:checked ~ label {
+.qa-container .a-box input:checked~label {
   background: #3cba92;
   z-index: -1;
   color: #fff;
@@ -255,8 +256,14 @@ p {
   transform: scale(1.02);
 }
 
-.qa-container .a-box input:checked ~ i {
-  color: #fff;
+.qa-container .a-box svg {
+  width: 50px;
+  max-height: 50px;
+  margin-top: 10px;
+}
+
+.qa-container .a-box input:checked~svg {
+  fill: #fff;
 }
 
 .qa-container .a-box label {
@@ -328,7 +335,7 @@ p {
   transition: 0.3s;
 }
 
-.normal-radio input:checked + label::after {
+.normal-radio input:checked+label::after {
   display: inline-block;
   content: "";
   width: 12px;
@@ -340,7 +347,7 @@ p {
   top: 5px;
 }
 
-.normal-radio input:checked + label span {
+.normal-radio input:checked+label span {
   color: #3cba92;
   font-weight: bold;
   font-size: 18px;
@@ -499,6 +506,10 @@ p {
   line-height: 1.4rem;
 }
 
+.react-rater-star.is-active {
+  color: #dad151 !important;
+}
+
 .result .sum-card {
   background: #fff;
   border-radius: 10px;
@@ -532,11 +543,18 @@ p {
 .result .insta-link {
   font-size: 1rem;
   display: block;
-  padding-bottom: 2rem;
+  line-height: 2;
 }
 
-.result .insta-link i {
-  margin: 0 1rem;
+.result .insta-link svg path {
+  fill: #3cba92;
+}
+
+.result .insta-link svg {
+  margin: 0 0.5rem;
+  width: 20px;
+  max-height: 20px;
+  display: inline-block;
 }
 
 .result .other-plants .result-heading {

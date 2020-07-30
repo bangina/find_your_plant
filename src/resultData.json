@@ -1,0 +1,154 @@
+[{
+        "light": 2,
+        "humidity": 2,
+        "temperature": 2,
+        "size": 2,
+        "fist": 14913,
+        "second": 19451,
+        "third": 19714
+    },
+    {
+        "light": 2,
+        "humidity": 2,
+        "temperature": 2,
+        "size": 3,
+        "fist": 12963,
+        "second": 14689,
+        "third": 19701
+    },
+    {
+        "light": 2,
+        "humidity": 2,
+        "temperature": 3,
+        "size": 2,
+        "fist": 19716,
+        "second": 18660,
+        "third": 19448
+    },
+    {
+        "light": 2,
+        "humidity": 2,
+        "temperature": 3,
+        "size": 3,
+        "fist": 14911,
+        "second": 14697,
+        "third": 19465
+    },
+    {
+        "light": 2,
+        "humidity": 3,
+        "temperature": 2,
+        "size": 2,
+        "fist": 19712,
+        "second": 19451,
+        "third": 19714
+    },
+    {
+        "light": 2,
+        "humidity": 3,
+        "temperature": 2,
+        "size": 3,
+        "fist": 19712,
+        "second": 19451,
+        "third": 19714
+    },
+    {
+        "light": 2,
+        "humidity": 3,
+        "temperature": 3,
+        "size": 2,
+        "fist": 16037,
+        "second": 19711,
+        "third": 16449
+    },
+    {
+        "light": 2,
+        "humidity": 3,
+        "temperature": 3,
+        "size": 3,
+        "fist": 16449,
+        "second": 16037,
+        "third": 19711
+    },
+    {
+        "light": 3,
+        "humidity": 2,
+        "temperature": 1,
+        "size": 3,
+        "fist": 14663,
+        "second": 13206,
+        "third": 12963
+    },
+    {
+        "light": 3,
+        "humidity": 2,
+        "temperature": 2,
+        "size": 2,
+        "fist": 14913,
+        "second": 13206,
+        "third": 12955
+    },
+    {
+        "light": 3,
+        "humidity": 2,
+        "temperature": 2,
+        "size": 3,
+        "fist": 13206,
+        "second": 12955,
+        "third": 14913
+    },
+    {
+        "light": 3,
+        "humidity": 2,
+        "temperature": 3,
+        "size": 2,
+        "fist": 13338,
+        "second": 18660,
+        "third": 19448
+    },
+    {
+        "light": 3,
+        "humidity": 2,
+        "temperature": 3,
+        "size": 3,
+        "fist": 13214,
+        "second": 14911,
+        "third": 14697
+    },
+    {
+        "light": 3,
+        "humidity": 3,
+        "temperature": 2,
+        "size": 2,
+        "fist": 13206,
+        "second": 12955,
+        "third": 14913
+    },
+    {
+        "light": 3,
+        "humidity": 3,
+        "temperature": 2,
+        "size": 3,
+        "fist": 13206,
+        "second": 12955,
+        "third": 14913
+    },
+    {
+        "light": 3,
+        "humidity": 3,
+        "temperature": 3,
+        "size": 2,
+        "fist": 13214,
+        "second": 14911,
+        "third": 14697
+    },
+    {
+        "light": 3,
+        "humidity": 3,
+        "temperature": 3,
+        "size": 3,
+        "fist": 13214,
+        "second": 14911,
+        "third": 14697
+    }
+]
