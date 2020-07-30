@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Question1 = (props) => {
   return (
-    <form action className="form">
+    <form action className="form q1">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">반려식물을 어떤 공간에 놓을 계획이신가요?</p>

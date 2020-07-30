@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Question4 = (props) => {
   return (
-    <form action className="form">
+    <form action className="form q4">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container normal-radio">
         <p className="q-txt">

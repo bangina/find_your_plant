@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="app-frame">
         <Switch>
           <Route path="/" exact>
             <Landingpage />
@@ -38,65 +38,77 @@ function App() {
             <Intro />
           </Route>
           <Route path="/q1">
-            <Question1
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            ></Question1>
+            <StepBar step="1"  statMsg="시작할게요">
+              <Question1
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              ></Question1>
+            </StepBar>
           </Route>
           <Route path="/q2">
-            <Question2
-              space={condition.space}
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            />
+            <StepBar step="2" statMsg="두번째">
+              <Question2
+                space={condition.space}
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              />
+            </StepBar>
           </Route>
           <Route path="/q3">
-            <Question3
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            />
+            <StepBar step="3" statMsg="세번째">
+              <Question3
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              />
+            </StepBar>
           </Route>
           <Route path="/q4">
-            <Question4
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            />
+            <StepBar step="4" statMsg="네번째">
+              <Question4
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              />
+            </StepBar>
           </Route>
           <Route path="/q5">
-            <Question5
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            />
+            <StepBar step="5"  statMsg="다섯번째">
+              <Question5
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              />
+            </StepBar>
           </Route>
           <Route path="/q6">
-            <Question6
-              onClick={(name, value) => {
-                setCondition({
-                  ...condition,
-                  [name]: value,
-                });
-              }}
-            />
+            <StepBar step="6"  statMsg="여섯번째">
+              <Question6
+                onClick={(name, value) => {
+                  setCondition({
+                    ...condition,
+                    [name]: value,
+                  });
+                }}
+              />
+            </StepBar>
           </Route>
           <Route path="/result">
             <Result condition={condition} data={DATA} />

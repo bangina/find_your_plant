@@ -3,12 +3,11 @@ import React from "react";
 const StepBar = (props) => {
   const children = props.children || null;
   return (
-    <div className="container" id="q1">
-      {" "}
+    <div className="container question">
       {/* 최상위 컨테이너 */}
       <div className="step-container">
-        <p>시작할게요</p>
-        <div className="step" />
+        <p>{props.statMsg}</p>
+        <div className="step" style={{ width: props.step * 40 }} />
         <div className="step-bg" />
       </div>
       {children}

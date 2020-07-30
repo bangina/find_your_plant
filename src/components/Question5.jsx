@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Question5 = (props) => {
   return (
-    <form action className="form">
+    <form action className="form q5">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">크기가 큰 식물도 함께 추천해드릴까요?</p>

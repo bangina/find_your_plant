@@ -57,13 +57,12 @@ p {
 .container {
   width: 100%;
   max-width: 500px;
-  border: 1px solid #999;
   border-radius: 30px;
   margin: auto;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: #ececec;
+  background: #f0efef;
 }
 
 .img-container,
@@ -146,13 +145,8 @@ p {
   padding-bottom: 40px;
 }
 
-#q1,
-#q2,
-#q3,
-#q4,
-#q5,
-#q6 {
-  background: #fee3db;
+.question {
+  background: #fee3db !important;
   padding-bottom: 3rem;
 }
 
@@ -353,46 +347,40 @@ p {
   font-size: 18px;
 }
 
-#q1 .qa-container label {
+.q1 .qa-container label {
   line-height: 2.5rem;
   font-weight: bold;
 }
 
-#q2 label span,
-#q3 label span,
-#q5 label span {
+.q2 label span,
+.q3 label span,
+.q5 label span {
   width: 80%;
   padding-bottom: 1rem;
 }
 
-#q3 label,
-#q5 label {
+.q3 label,
+.q5 label {
   height: 170px;
-}
-
-#q2 .step {
-  width: calc(100% / 6 * 2);
-}
-
-#q3 .step {
-  width: calc(100% / 6 * 3);
-}
-
-#q4 .step {
-  width: calc(100% / 6 * 4);
-}
-
-#q5 .step {
-  width: calc(100% / 6 * 5);
-}
-
-#q6 .step {
-  width: 100%;
 }
 
 .result {
   text-align: center;
   padding: 2rem 0;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  top: 560px;
+}
+
+.swiper-pagination-bullet {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3cba92 !important;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
 .result .point-txt {
@@ -421,21 +409,21 @@ p {
   width: calc(100% - 6rem);
   background: #fff;
   border-radius: 10px;
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: 2rem 3rem 5rem auto;
+  padding: 1.2rem;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .result .plant-card .plant-name {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .result .plant-card .plant-name-en {
   font-size: 1.2rem;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
 }
 
 .result .plant-card .tags {
@@ -544,6 +532,7 @@ p {
   font-size: 1rem;
   display: block;
   line-height: 2;
+  margin: 3rem 0;
 }
 
 .result .insta-link svg path {
