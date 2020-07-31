@@ -2,13 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Question4 = (props) => {
-  
+  const spaceToString = (space) => {
+    switch (space) {
+      case "1":
+        return "사무실";
+      case "2":
+        return "방";
+      case "3":
+        return "거실";
+      default:
+        return "공간";
+    }
+  };
+
   return (
     <form action className="form q4">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container normal-radio">
         <p className="q-txt">
-          <span>사무실</span>은 겨울에 얼마나 추워지나요?
+          <span>{spaceToString(props.space)}</span>은 겨울에 얼마나 추워지나요?
         </p>
         <input
           type="radio"

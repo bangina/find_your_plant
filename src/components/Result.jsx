@@ -16,25 +16,90 @@ const Result = (props) => {
   const [secondPlant, setSecondPlant] = useState({});
   const [ThirdPlant, setThirdPlant] = useState({});
 
+  const setPlants = (cntntsNo1, cntntsNo2, cntntsNo3) => {
+    const nextData1 = props.data.filter((data) => data.cntntsNo === cntntsNo1);
+    const nextData2 = props.data.filter((data) => data.cntntsNo === cntntsNo2);
+    const nextData3 = props.data.filter((data) => data.cntntsNo === cntntsNo3);
+
+    setFirstPlant(nextData1[0]);
+    setSecondPlant(nextData2[0]);
+    setThirdPlant(nextData3[0]);
+  };
+
+  const spaceToString = (space) => {
+    switch (space) {
+      case "1":
+        return "사무실";
+      case "2":
+        return "방";
+      case "3":
+        return "거실";
+      default:
+        return "공간";
+    }
+  };
+
   useEffect(() => {
     const { light, humidity, temperature, size } = props.condition;
 
-    if (props.condition.temperature == 1) {
-      const nextData1 = props.data.filter((data) => data.cntntsNo == 14663);
-      const nextData2 = props.data.filter((data) => data.cntntsNo == 13206);
-      const nextData3 = props.data.filter((data) => data.cntntsNo == 12963);
+    const answerz = [light, humidity, temperature, size];
+    const answerzString = answerz.join();
 
-      setFirstPlant(nextData1[0]);
-      setSecondPlant(nextData2[0]);
-      setThirdPlant(nextData3[0]);
-    } else if (light == 2 && humidity == 2 && temperature == 2 && size) {
-      const nextData1 = props.data.filter((data) => data.cntntsNo == 14913);
-      const nextData2 = props.data.filter((data) => data.cntntsNo == 19451);
-      const nextData3 = props.data.filter((data) => data.cntntsNo == 19714);
-
-      setFirstPlant(nextData1[0]);
-      setSecondPlant(nextData2[0]);
-      setThirdPlant(nextData3[0]);
+    if (temperature === "1") {
+      setPlants(14663, 13206, 12963);
+    } else {
+      switch (answerzString) {
+        case "2,2,2,2":
+          setPlants(14913, 19451, 19714);
+          break;
+        case "2,2,2,3":
+          setPlants(12963, 14689, 19701);
+          break;
+        case "2,2,3,2":
+          setPlants(19716, 18660, 19448);
+          break;
+        case "2,2,3,3":
+          setPlants(14911, 14697, 19465);
+          break;
+        case "2,3,2,2":
+          setPlants(19712, 19451, 19714);
+          break;
+        case "2,3,2,3":
+          setPlants(19712, 19451, 19714);
+          break;
+        case "2,3,3,2":
+          setPlants(16037, 19711, 16449);
+          break;
+        case "2,3,3,3":
+          setPlants(16449, 16037, 19711);
+          break;
+        case "3,2,2,2":
+          setPlants(14913, 13206, 12955);
+          break;
+        case "3,2,2,3":
+          setPlants(13206, 12955, 14913);
+          break;
+        case "3,2,3,2":
+          setPlants(13338, 18660, 19448);
+          break;
+        case "3,2,3,3":
+          setPlants(13214, 14911, 14697);
+          break;
+        case "3,3,2,2":
+          setPlants(13206, 12955, 14913);
+          break;
+        case "3,3,2,3":
+          setPlants(13206, 12955, 14913);
+          break;
+        case "3,3,3,2":
+          setPlants(13214, 14911, 14697);
+          break;
+        case "3,3,3,3":
+          setPlants(13214, 14911, 14697);
+          break;
+        default:
+          break;
+      }
     }
   }, []);
   return (
@@ -46,7 +111,8 @@ const Result = (props) => {
             <span role="img" aria-label="smiley face">
               😄{" "}
             </span>
-            님의 <span>사무실</span>에 딱 맞는 식물은..1
+            님의 <span>{spaceToString(props.condition.space)}</span>에 딱 맞는
+            식물은..1
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
