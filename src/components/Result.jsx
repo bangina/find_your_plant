@@ -14,16 +14,19 @@ import img from "../imgs/14663.jpg";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
-  //img import
-
-  const image = require.context("../imgs", false, /\.jpg$/);
-  const [resultData, setResultData] = useState({});
+  const [firstPlant, setFirstPlant] = useState({});
+  const [secondPlant, setSecondPlant] = useState({});
+  const [ThirdPlant, setThirdPlant] = useState({});
 
   useEffect(() => {
     if (props.condition.temperature == 1) {
-      const nextData = props.data.filter((data) => data.cntntsNo == 14663);
-      setResultData(nextData[0]);
-      console.log(resultData.cntntsNo);
+      const nextData1 = props.data.filter((data) => data.cntntsNo == 14663);
+      const nextData2 = props.data.filter((data) => data.cntntsNo == 13206);
+      const nextData3 = props.data.filter((data) => data.cntntsNo == 12963);
+
+      setFirstPlant(nextData1[0]);
+      setSecondPlant(nextData2[0]);
+      setThirdPlant(nextData3[0]);
     }
   }, []);
   return (
@@ -44,13 +47,13 @@ const Result = (props) => {
               style={{ "background-image": "url(../imgs/14663.jpg)" }}
             ></div>
             {/* <img src={`../imgs/${resultData.cntntsNo}.jpg`} alt="식물 사진" /> */}
-            <p className="plant-name">{resultData.contntsName}</p>
-            <p className="plant-name-en">{resultData.plntzrNm}</p>
+            <p className="plant-name">{firstPlant.contntsName}</p>
+            <p className="plant-name-en">{firstPlant.plntzrNm}</p>
             <div className="tags">
-              <span className="tag">{resultData.toxctyInfo}</span>
-              <span className="tag">{resultData.frtlzrInfo}</span>
+              <span className="tag">{firstPlant.toxctyInfo}</span>
+              <span className="tag">{firstPlant.frtlzrInfo}</span>
               <span className="tag">
-                추천장소_{resultData.postngplaceCodeNm}
+                추천장소_{firstPlant.postngplaceCodeNm}
               </span>
             </div>
           </div>
@@ -62,7 +65,7 @@ const Result = (props) => {
               <div className="step-container step-container-thin">
                 <div
                   className="step"
-                  style={{ width: resultData.light * 80 }}
+                  style={{ width: firstPlant.light * 80 }}
                 />
                 <div className="step-bg" />
               </div>
@@ -73,7 +76,7 @@ const Result = (props) => {
                 {/* step바 width값 = 50 * 각 level값 */}
                 <div
                   className="step"
-                  style={{ width: resultData.humidity * 80 }}
+                  style={{ width: firstPlant.humidity * 80 }}
                 />
                 <div className="step-bg" />
               </div>
@@ -82,7 +85,7 @@ const Result = (props) => {
               <span className="result-desc">크기</span>
               <div className="step-container step-container-thin">
                 {/* step바 width값 = 50 * 각 level값 */}
-                <div className="step" style={{ width: resultData.size * 80 }} />
+                <div className="step" style={{ width: firstPlant.size * 80 }} />
                 <div className="step-bg" />
               </div>
             </li>
@@ -95,7 +98,7 @@ const Result = (props) => {
             </span>
             를 소개해드릴게요 ☘️
           </h4>
-          <p className="result-desc result-desc-main">{resultData.tips}</p>
+          <p className="result-desc result-desc-main">{firstPlant.tips}</p>
           <div className="div-line" />
           {/* 식물 요약*/}
           <h4 className="result-heading">
@@ -121,7 +124,7 @@ const Result = (props) => {
           </ul>
           {/* 인스타그램 외부 링크 */}
           <a
-            href={`https://www.instagram.com/explore/tags/${resultData.contntsName}`}
+            href={`https://www.instagram.com/explore/tags/${firstPlant.contntsName}`}
             className="point-txt insta-link"
             title="인스타그램 가기"
           >
@@ -186,7 +189,7 @@ const Result = (props) => {
           {/* 추천식물 카드 */}
           <div className="plant-card">
             {/* <img src={require("../imgs/monstera.jpg")} alt="monstera" /> */}
-            <p className="plant-name">몬스테라</p>
+            <p className="plant-name">{secondPlant.contntsName}</p>
             <p className="plant-name-en">Monstera</p>
             <div className="tags">
               <span className="tag">독성조심</span>
