@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import StepBar from "./components/StepBar";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -14,7 +14,6 @@ import Result from "./components/Result";
 import DATA from "./data";
 
 function App() {
-  const [step, setStep] = useState(1);
   const [condition, setCondition] = useState({
     space: "",
     light: "",
