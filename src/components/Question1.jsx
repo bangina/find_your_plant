@@ -8,7 +8,7 @@ const Question1 = (props) => {
       <div className="qa-container">
         <p className="q-txt">반려식물을 어떤 공간에 놓을 계획이신가요?</p>
         <div className="a-box">
-          <img src={require("../imgs/q_1_1.jpg")} alt="사무실" />
+          <img src={"/imgs/q_1_1.jpg"} alt="사무실" />
           <input
             type="radio"
             id="q-1-1"
@@ -23,7 +23,7 @@ const Question1 = (props) => {
           </label>
         </div>
         <div className="a-box">
-          <img src={require("../imgs/q_1_2.jpg")} alt="방" />
+          <img src={"/imgs/q_1_2.jpg"} alt="방" />
           <input
             type="radio"
             id="q-1-2"
@@ -38,7 +38,7 @@ const Question1 = (props) => {
           </label>
         </div>
         <div className="a-box">
-          <img src={require("../imgs/q_1_3.jpg")} alt="거실" />
+          <img src={"/imgs/q_1_3.jpg"} alt="거실" />
           <input
             type="radio"
             id="q-1-3"
