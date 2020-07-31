@@ -12,13 +12,19 @@ import "swiper/swiper.scss";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
-  const [resultData, setResultData] = useState({});
-  const [test, setTest] = useState("테스트으으으");
+  const [firstPlant, setFirstPlant] = useState({});
+  const [secondPlant, setSecondPlant] = useState({});
+  const [ThirdPlant, setThirdPlant] = useState({});
 
   useEffect(() => {
     if (props.condition.temperature == 1) {
-      const nextData = props.data.filter((data) => data.cntntsNo == 14663);
-      setResultData(nextData[0]);
+      const nextData1 = props.data.filter((data) => data.cntntsNo == 14663);
+      const nextData2 = props.data.filter((data) => data.cntntsNo == 13206);
+      const nextData3 = props.data.filter((data) => data.cntntsNo == 12963);
+
+      setFirstPlant(nextData1[0]);
+      setSecondPlant(nextData2[0]);
+      setThirdPlant(nextData3[0]);
     }
   }, []);
   return (
@@ -34,8 +40,8 @@ const Result = (props) => {
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
-            <img src={require("../imgs/monstera.jpg")} alt="monstera" />
-            <p className="plant-name">몬스테라</p>
+            <img src="" alt="monstera" />
+            <p className="plant-name">{firstPlant.cntntsNo}</p>
             <p className="plant-name-en">Monstera</p>
             <div className="tags">
               <span className="tag">독성조심</span>
@@ -170,8 +176,8 @@ const Result = (props) => {
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
-            <img src={require("../imgs/monstera.jpg")} alt="monstera" />
-            <p className="plant-name">몬스테라</p>
+            <img src="" alt="monstera" />
+            <p className="plant-name">{secondPlant.contntsName}</p>
             <p className="plant-name-en">Monstera</p>
             <div className="tags">
               <span className="tag">독성조심</span>
