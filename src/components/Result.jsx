@@ -9,16 +9,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/swiper.scss";
 
+import img from "../imgs/14663.jpg";
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
+  //img import
+
+  const image = require.context("../imgs", false, /\.jpg$/);
   const [resultData, setResultData] = useState({});
-  const [test, setTest] = useState("테스트으으으");
 
   useEffect(() => {
     if (props.condition.temperature == 1) {
       const nextData = props.data.filter((data) => data.cntntsNo == 14663);
       setResultData(nextData[0]);
+      console.log(resultData.cntntsNo);
     }
   }, []);
   return (
@@ -34,13 +39,19 @@ const Result = (props) => {
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
-            <img src={require("../imgs/monstera.jpg")} alt="monstera" />
-            <p className="plant-name">몬스테라</p>
-            <p className="plant-name-en">Monstera</p>
+            <div
+              className="img-box"
+              style={{ "background-image": "url(../imgs/14663.jpg)" }}
+            ></div>
+            {/* <img src={`../imgs/${resultData.cntntsNo}.jpg`} alt="식물 사진" /> */}
+            <p className="plant-name">{resultData.contntsName}</p>
+            <p className="plant-name-en">{resultData.plntzrNm}</p>
             <div className="tags">
-              <span className="tag">독성조심</span>
-              <span className="tag">비료_가끔</span>
-              <span className="tag">추천장소_거실_주방</span>
+              <span className="tag">{resultData.toxctyInfo}</span>
+              <span className="tag">{resultData.frtlzrInfo}</span>
+              <span className="tag">
+                추천장소_{resultData.postngplaceCodeNm}
+              </span>
             </div>
           </div>
           {/* 양육 정보 */}
@@ -49,7 +60,10 @@ const Result = (props) => {
             <li>
               <span className="result-desc">빛</span>
               <div className="step-container step-container-thin">
-                <div className="step" />
+                <div
+                  className="step"
+                  style={{ width: resultData.light * 80 }}
+                />
                 <div className="step-bg" />
               </div>
             </li>
@@ -57,7 +71,10 @@ const Result = (props) => {
               <span className="result-desc">습도</span>
               <div className="step-container step-container-thin">
                 {/* step바 width값 = 50 * 각 level값 */}
-                <div className="step" style={{ width: 50 * 3 }} />
+                <div
+                  className="step"
+                  style={{ width: resultData.humidity * 80 }}
+                />
                 <div className="step-bg" />
               </div>
             </li>
@@ -65,7 +82,7 @@ const Result = (props) => {
               <span className="result-desc">크기</span>
               <div className="step-container step-container-thin">
                 {/* step바 width값 = 50 * 각 level값 */}
-                <div className="step" style={{ width: 50 * 3 }} />
+                <div className="step" style={{ width: resultData.size * 80 }} />
                 <div className="step-bg" />
               </div>
             </li>
@@ -78,13 +95,7 @@ const Result = (props) => {
             </span>
             를 소개해드릴게요 ☘️
           </h4>
-          <p className="result-desc result-desc-main">
-            몬스테라는 생육 난이도가 높지 않아서 초보자도 기를 수 있는 식물이에
-            빛을 좋아하고, 적당한 습도가 필요해요. 크기는 중형 사이즈예요.
-            물주기는 흙표면이 말랐을 때 넉넉히 주세요. 또한 독성이 있으니
-            반려동물과 아이가 있다면 조심해주세요. 비료는 가끔씩 주세요.
-            추천장소는 거실입니다.
-          </p>
+          <p className="result-desc result-desc-main">{resultData.tips}</p>
           <div className="div-line" />
           {/* 식물 요약*/}
           <h4 className="result-heading">
@@ -109,7 +120,11 @@ const Result = (props) => {
             </li>
           </ul>
           {/* 인스타그램 외부 링크 */}
-          <a href="#" className="point-txt insta-link">
+          <a
+            href={`https://www.instagram.com/explore/tags/${resultData.contntsName}`}
+            className="point-txt insta-link"
+            title="인스타그램 가기"
+          >
             <svg
               width="72"
               height="72"
@@ -170,7 +185,7 @@ const Result = (props) => {
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
-            <img src={require("../imgs/monstera.jpg")} alt="monstera" />
+            {/* <img src={require("../imgs/monstera.jpg")} alt="monstera" /> */}
             <p className="plant-name">몬스테라</p>
             <p className="plant-name-en">Monstera</p>
             <div className="tags">
