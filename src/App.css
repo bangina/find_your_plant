@@ -35,6 +35,15 @@ p {
   font-weight: bold;
 }
 
+.show {
+  display: block;
+  color: red;
+}
+
+.alert-msg {
+  display: none;
+}
+
 .btn {
   color: #fff;
   background: #24906e;

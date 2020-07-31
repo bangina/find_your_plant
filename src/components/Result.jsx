@@ -53,7 +53,7 @@ const Result = (props) => {
             <div
               className="img-box"
               style={{
-                "background-image": `url(./imgs/${firstPlant.cntntsNo}.jpg)`,
+                "background-image": `url(/imgs/${firstPlant.cntntsNo}.jpg)`,
               }}
             ></div>
             {/* <img src={`/imgs/${firstPlant.cntntsNo}.jpg`} alt="식물 사진" /> */}

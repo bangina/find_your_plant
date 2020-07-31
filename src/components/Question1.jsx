@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Question1 = (props) => {
+  const alertRef = useRef();
+  const onBtnClick = (e) => {
+    if (props.condition.space == false) {
+      alertRef.current.classList.add("show");
+      alertRef.current.classList.remove("alert-msg");
+    }
+  };
   return (
     <form action className="form q1">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
@@ -66,9 +73,12 @@ const Question1 = (props) => {
             <span>기타</span>
           </label>
         </div>
+        <p className="alert-msg" ref={alertRef}>
+          답변을 선택해주세요.
+        </p>
       </div>
-      <button className="btn" type="button">
-        <Link to="/q2">
+      <button className="btn" type="button" onClick={onBtnClick}>
+        <Link to={props.condition.space ? "/q2" : "/q1"}>
           다음 질문{" "}
           <span role="img" aria-label="">
             👉

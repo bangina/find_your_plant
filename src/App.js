@@ -36,6 +36,7 @@ function App() {
           <Route path="/q1">
             <StepBar step="1" statMsg="시작할게요">
               <Question1
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
