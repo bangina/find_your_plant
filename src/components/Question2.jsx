@@ -67,6 +67,15 @@ const Question2 = (props) => {
           </label>
         </div>
         <div className="a-box">
+          <input
+            type="radio"
+            id="q-2-2"
+            name="light"
+            value="2"
+            onClick={(e) => {
+              props.onClick(e.target.name, e.target.value);
+            }}
+          />
           <svg
             width="95"
             height="95"
