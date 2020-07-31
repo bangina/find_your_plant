@@ -9,8 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/swiper.scss";
 
-import img from "../imgs/14663.jpg";
-
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
@@ -19,10 +17,20 @@ const Result = (props) => {
   const [ThirdPlant, setThirdPlant] = useState({});
 
   useEffect(() => {
+    const { light, humidity, temperature, size } = props.condition;
+
     if (props.condition.temperature == 1) {
       const nextData1 = props.data.filter((data) => data.cntntsNo == 14663);
       const nextData2 = props.data.filter((data) => data.cntntsNo == 13206);
       const nextData3 = props.data.filter((data) => data.cntntsNo == 12963);
+
+      setFirstPlant(nextData1[0]);
+      setSecondPlant(nextData2[0]);
+      setThirdPlant(nextData3[0]);
+    } else if (light == 2 && humidity == 2 && temperature == 2 && size) {
+      const nextData1 = props.data.filter((data) => data.cntntsNo == 14913);
+      const nextData2 = props.data.filter((data) => data.cntntsNo == 19451);
+      const nextData3 = props.data.filter((data) => data.cntntsNo == 19714);
 
       setFirstPlant(nextData1[0]);
       setSecondPlant(nextData2[0]);
