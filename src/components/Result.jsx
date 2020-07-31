@@ -13,26 +13,14 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = (props) => {
   const [resultData, setResultData] = useState({});
-
-  const spaceToString = (space) => {
-    switch (space) {
-      case "1":
-        return "사무실";
-      case "2":
-        return "방";
-      case "3":
-        return "거실";
-      default:
-        return "공간";
-    }
-  };
+  const [test, setTest] = useState("테스트으으으");
 
   useEffect(() => {
-    if (props.condition.temperature === "1") {
-      const nextData = props.data.filter((data) => data.cntntsNo === 14663);
+    if (props.condition.temperature == 1) {
+      const nextData = props.data.filter((data) => data.cntntsNo == 14663);
       setResultData(nextData[0]);
     }
-  }, [props]);
+  }, []);
   return (
     <Swiper spaceBetween={0} slidesPerView={1} pagination={{ clickable: true }}>
       <SwiperSlide>
@@ -42,13 +30,12 @@ const Result = (props) => {
             <span role="img" aria-label="smiley face">
               😄{" "}
             </span>
-            님의 <span>{spaceToString(props.condition.space)}</span>에 딱 맞는
-            식물은..!
+            님의 <span>사무실</span>에 딱 맞는 식물은..1
           </p>
           {/* 추천식물 카드 */}
           <div className="plant-card">
             <img src={require("../imgs/monstera.jpg")} alt="monstera" />
-            <p className="plant-name">{resultData.contntsName}</p>
+            <p className="plant-name">몬스테라</p>
             <p className="plant-name-en">Monstera</p>
             <div className="tags">
               <span className="tag">독성조심</span>

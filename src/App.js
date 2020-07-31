@@ -21,7 +21,7 @@ function App() {
     humidity: "",
     temperature: "",
     size: "",
-    difficulty: ""
+    difficulty: "",
   });
 
   return (
@@ -35,7 +35,7 @@ function App() {
             <Intro />
           </Route>
           <Route path="/q1">
-            <StepBar step="1"  statMsg="시작할게요">
+            <StepBar step="1" statMsg="시작할게요">
               <Question1
                 onClick={(name, value) => {
                   setCondition({
@@ -62,6 +62,7 @@ function App() {
           <Route path="/q3">
             <StepBar step="3" statMsg="세번째">
               <Question3
+                space={condition.space}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -74,6 +75,7 @@ function App() {
           <Route path="/q4">
             <StepBar step="4" statMsg="네번째">
               <Question4
+                space={condition.space}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -84,8 +86,9 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q5">
-            <StepBar step="5"  statMsg="다섯번째">
+            <StepBar step="5" statMsg="다섯번째">
               <Question5
+                space={condition.space}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -96,8 +99,9 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q6">
-            <StepBar step="6"  statMsg="여섯번째">
+            <StepBar step="6" statMsg="여섯번째">
               <Question6
+                space={condition.space}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -108,7 +112,7 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/result">
-            <Result condition={condition} data={DATA}/>
+            <Result condition={condition} data={DATA} />
           </Route>
         </Switch>
       </div>

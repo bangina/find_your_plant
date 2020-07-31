@@ -2,12 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Question3 = (props) => {
+  const spaceToString = (space) => {
+    switch (space) {
+      case "1":
+        return "사무실";
+      case "2":
+        return "방";
+      case "3":
+        return "거실";
+      default:
+        return "공간";
+    }
+  };
+
   return (
     <form action className="form q3">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">
-          <span>사무실</span>에 습도가 어느 정도인가요?
+          <span>{spaceToString(props.space)}</span>에 습도가 어느 정도인가요?
         </p>
         <div className="a-box">
           <input
