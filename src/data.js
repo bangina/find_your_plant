@@ -208,7 +208,7 @@ const DATA = [{
     },
     {
         "cntntsNo": 14663,
-        "contntsName": "동백",
+        "contntsName": "동백나무",
         "plntzrNm": "common camellia",
         "light": 3,
         "humidity": 2,
