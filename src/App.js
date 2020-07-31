@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import StepBar from "./components/StepBar";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -14,14 +14,13 @@ import Result from "./components/Result";
 import DATA from "./data";
 
 function App() {
-  const [step, setStep] = useState(1);
   const [condition, setCondition] = useState({
     space: "",
     light: "",
     humidity: "",
     temperature: "",
     size: "",
-    difficulty: ""
+    difficulty: "",
   });
 
   return (
@@ -35,7 +34,7 @@ function App() {
             <Intro />
           </Route>
           <Route path="/q1">
-            <StepBar step="1"  statMsg="시작할게요">
+            <StepBar step="1" statMsg="시작할게요">
               <Question1
                 onClick={(name, value) => {
                   setCondition({
@@ -84,7 +83,7 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q5">
-            <StepBar step="5"  statMsg="다섯번째">
+            <StepBar step="5" statMsg="다섯번째">
               <Question5
                 onClick={(name, value) => {
                   setCondition({
@@ -96,7 +95,7 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q6">
-            <StepBar step="6"  statMsg="여섯번째">
+            <StepBar step="6" statMsg="여섯번째">
               <Question6
                 onClick={(name, value) => {
                   setCondition({
@@ -108,7 +107,7 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/result">
-            <Result condition={condition} data={DATA}/>
+            <Result condition={condition} data={DATA} />
           </Route>
         </Switch>
       </div>
