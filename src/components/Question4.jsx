@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Question4 = (props) => {
@@ -14,13 +14,26 @@ const Question4 = (props) => {
         return "공간";
     }
   };
+  const alertRef = useRef();
+  const onBtnClick = (e) => {
+    if (props.condition.temperature == false) {
+      alertRef.current.classList.add("show");
+      alertRef.current.classList.remove("alert-msg");
+    }
+  };
+
+  useEffect(() => {
+    alertRef.current.classList.remove("show");
+    alertRef.current.classList.add("alert-msg");
+  }, [props.condition.temperature]);
 
   return (
     <form action className="form q4">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container normal-radio">
         <p className="q-txt">
-          <span>{spaceToString(props.space)}</span>은 겨울에 얼마나 추워지나요?
+          <span>{spaceToString(props.space)}</span>은 <strong>겨울</strong>에
+          얼마나 추워지나요?
         </p>
         <input
           type="radio"
@@ -61,9 +74,12 @@ const Question4 = (props) => {
           {/* winterLwetTpCodeNm : 3 */}
           <span>항상 13도 이상으로 유지돼요.</span>
         </label>
+        <p className="alert-msg" ref={alertRef}>
+          답변을 선택해주세요.
+        </p>
       </div>
-      <button className="btn" type="button">
-        <Link to="/q5">
+      <button className="btn" type="button" onClick={onBtnClick}>
+        <Link to={props.condition.temperature ? "/q5" : "/q4"}>
           다음 질문{" "}
           <span role="img" aria-label="">
             👉

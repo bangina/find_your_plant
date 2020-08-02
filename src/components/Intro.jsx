@@ -10,7 +10,8 @@ const Intro = () => {
       <div className="txt-container">
         <p className="intro-txt">
           몇 가지 질문에만 답해주시면
-          <strong> 생존확률이 높은 식물</strong>을 추천해드릴게요!
+          <br />
+          <strong> 공간에 딱! 맞는 식물들</strong>을 추천해드릴게요!
         </p>
       </div>
       {/* 하단 이미지&버튼 영역 */}

@@ -37,7 +37,10 @@ p {
 
 .show {
   display: block;
-  color: red;
+  color: #24906e;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
 }
 
 .alert-msg {
@@ -242,6 +245,17 @@ p {
   text-align: center;
 }
 
+.qa-container .a-box .etc-emoji~label {
+  line-height: 1.5;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.qa-container .a-box .etc-emoji {
+  font-size: 40px;
+  line-height: 110px;
+}
+
 .qa-container .a-box img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -369,29 +383,64 @@ p {
   padding-bottom: 1rem;
 }
 
-.q3 label,
-.q5 label {
-  height: 170px;
-}
-
 .result {
   text-align: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
+}
+
+.result .medal {
+  font-size: 70px;
+  display: block;
+  margin-bottom: 15px;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets {
-  top: 560px;
+  top: 22px;
+  right: 0;
+  left: auto !important;
+  width: 80px !important;
   bottom: auto !important;
+  background: #3cba92;
+  line-height: 35px;
 }
 
 .swiper-pagination-bullet {
-  width: 14px !important;
-  height: 14px !important;
+  width: 10px !important;
+  height: 0px !important;
+}
+
+.swiper-pagination-bullet::after {
+  color: #fff;
+  font-size: 14px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-bullet:first-child::after {
+  content: "1";
+}
+
+.swiper-pagination-bullet:nth-child(2)::after {
+  content: "2";
+}
+
+.swiper-pagination-bullet:nth-child(3)::after {
+  content: "3";
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #3cba92 !important;
+  background-color: transparent !important;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: fixed !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 30px !important;
+  color: #888;
 }
 
 .result .img-box {
@@ -441,7 +490,7 @@ p {
 }
 
 .result .plant-card .plant-name-en {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -452,12 +501,13 @@ p {
 .result .plant-card .tags .tag {
   display: inline-block;
   line-height: 1.4rem;
-  font-size: 14px;
+  font-size: 13px;
   color: #fff;
   background: #3cba92;
   padding: 0 10px;
   border-radius: 30px;
   margin-bottom: 5px;
+  letter-spacing: -0.02em;
 }
 
 .result .conditions {

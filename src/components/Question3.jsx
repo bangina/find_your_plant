@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Question3 = (props) => {
@@ -14,13 +14,27 @@ const Question3 = (props) => {
         return "공간";
     }
   };
+  const alertRef = useRef();
+  const onBtnClick = (e) => {
+    if (props.condition.humidity == false) {
+      alertRef.current.classList.add("show");
+      alertRef.current.classList.remove("alert-msg");
+      console.log("no");
+    }
+  };
+
+  useEffect(() => {
+    alertRef.current.classList.remove("show");
+    alertRef.current.classList.add("alert-msg");
+  }, [props.condition.humidity]);
 
   return (
     <form action className="form q3">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">
-          <span>{spaceToString(props.space)}</span>에 습도가 어느 정도인가요?
+          <span>{spaceToString(props.space)}</span>의 <strong>습도</strong>는
+          어떤가요?
         </p>
         <div className="a-box">
           <input
@@ -49,10 +63,7 @@ const Question3 = (props) => {
           </svg>
           {/* hdCodeNm : 3 */}
           <label htmlFor="q-3-1">
-            <span>
-              적당해요.
-              <br /> 딱히 건조함은 못 느끼고 있어요.
-            </span>
+            <span>적당해요. 건조하지는 않아요.</span>
           </label>
         </div>
         <div className="a-box">
@@ -80,9 +91,12 @@ const Question3 = (props) => {
             <span>꽤 건조한 편이에요.</span>
           </label>
         </div>
+        <p className="alert-msg" ref={alertRef}>
+          답변을 선택해주세요.
+        </p>
       </div>
-      <button className="btn" type="button">
-        <Link to="/q4">
+      <button className="btn" type="button" onClick={onBtnClick}>
+        <Link to={props.condition.humidity ? "/q4" : "/q3"}>
           다음 질문{" "}
           <span role="img" aria-label="">
             👉

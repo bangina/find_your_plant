@@ -16,7 +16,7 @@ const Landingpage = () => {
       {/* 하단 텍스트 &버튼 영역 */}
       <div className="txt-container">
         <p className="intro-txt">
-          혹시 <strong>반려식물</strong> 고르시는 데 도움이 필요하신가요?
+          환상의 <strong>식물짝궁</strong> 을 찾아드려요!
         </p>
         <button className="btn" type="button">
           <Link to="/intro">네! 도와주세요</Link>

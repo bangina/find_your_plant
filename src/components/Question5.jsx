@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Question5 = (props) => {
+  const alertRef = useRef();
+  const onBtnClick = (e) => {
+    if (props.condition.size == false) {
+      alertRef.current.classList.add("show");
+      alertRef.current.classList.remove("alert-msg");
+    }
+  };
+
+  useEffect(() => {
+    alertRef.current.classList.remove("show");
+    alertRef.current.classList.add("alert-msg");
+  }, [props.condition.size]);
+
   return (
     <form action className="form q5">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
-        <p className="q-txt">크기가 큰 식물도 함께 추천해드릴까요?</p>
+        <p className="q-txt">
+          <strong>크기가 큰 식물</strong>도 함께 추천해드릴까요?
+        </p>
         <div className="a-box">
           <input
             type="radio"
@@ -58,12 +73,15 @@ const Question5 = (props) => {
           </svg>
           {/* size : 2 */}
           <label htmlFor="q-5-2">
-            <span>아니요, 크지 않은 식물만 추천해주세요.</span>
+            <span>아니요, 크지 않은 식물만 보여주세요.</span>
           </label>
         </div>
+        <p className="alert-msg" ref={alertRef}>
+          답변을 선택해주세요.
+        </p>
       </div>
-      <button className="btn" type="button">
-        <Link to="/q6">
+      <button className="btn" type="button" onClick={onBtnClick}>
+        <Link to={props.condition.size ? "/q6" : "/q5"}>
           다음 질문
           <span role="img" aria-label="">
             👉

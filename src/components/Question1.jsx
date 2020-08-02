@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Question1 = (props) => {
@@ -9,11 +9,19 @@ const Question1 = (props) => {
       alertRef.current.classList.remove("alert-msg");
     }
   };
+
+  useEffect(() => {
+    alertRef.current.classList.remove("show");
+    alertRef.current.classList.add("alert-msg");
+  }, [props.condition.space]);
+
   return (
     <form action className="form q1">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
-        <p className="q-txt">반려식물을 어떤 공간에 놓을 계획이신가요?</p>
+        <p className="q-txt">
+          <strong>어떤 공간에</strong> 반려식물을 놓을 계획이신가요?
+        </p>
         <div className="a-box">
           <img src={"/imgs/q_1_1.jpg"} alt="사무실" />
           <input
@@ -60,6 +68,7 @@ const Question1 = (props) => {
           </label>
         </div>
         <div className="a-box">
+          <span className="etc-emoji">🎸</span>
           <input
             type="radio"
             id="q-1-4"
@@ -70,7 +79,7 @@ const Question1 = (props) => {
             }}
           />
           <label htmlFor="q-1-4">
-            <span>기타</span>
+            <span>기타/아직 모르겠어요</span>
           </label>
         </div>
         <p className="alert-msg" ref={alertRef}>

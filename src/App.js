@@ -47,9 +47,10 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q2">
-            <StepBar step="2" statMsg="두번째">
+            <StepBar step="2" statMsg="밝기 체크!">
               <Question2
                 space={condition.space}
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -60,9 +61,10 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q3">
-            <StepBar step="3" statMsg="세번째">
+            <StepBar step="3" statMsg="습도 체크!">
               <Question3
                 space={condition.space}
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -73,9 +75,10 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q4">
-            <StepBar step="4" statMsg="네번째">
+            <StepBar step="4" statMsg="최저 온도 체크!">
               <Question4
                 space={condition.space}
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -86,9 +89,10 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q5">
-            <StepBar step="5" statMsg="다섯번째">
+            <StepBar step="5" statMsg="거의 다 왔어요!">
               <Question5
                 space={condition.space}
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
@@ -99,9 +103,10 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/q6">
-            <StepBar step="6" statMsg="여섯번째">
+            <StepBar step="6" statMsg="마지막 질문이에요 👏">
               <Question6
                 space={condition.space}
+                condition={condition}
                 onClick={(name, value) => {
                   setCondition({
                     ...condition,
