@@ -273,8 +273,13 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button className="btn">
-            <Link to="/">
+          <button
+            className="btn"
+            onClick={() => {
+              props.onClick();
+            }}
+          >
+            <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
                 ♻️
@@ -427,8 +432,13 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button className="btn">
-            <Link to="/">
+          <button
+            className="btn"
+            onClick={() => {
+              props.onClick();
+            }}
+          >
+            <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
                 ♻️
@@ -578,8 +588,13 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button className="btn">
-            <Link to="/">
+          <button
+            className="btn"
+            onClick={() => {
+              props.onClick();
+            }}
+          >
+            <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
                 ♻️

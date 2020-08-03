@@ -66,13 +66,11 @@ const Question6 = (props) => {
           답변을 선택해주세요.
         </p>
       </div>
-      <a href="result.html" title="다음 질문으로">
-        <button className="btn" type="button" onClick={onBtnClick}>
-          <Link to={props.condition.difficulty ? "/result" : "/q6"}>
-            결과 확인하기
-          </Link>
-        </button>
-      </a>
+      <button className="btn" type="button" onClick={onBtnClick}>
+        <Link to={props.condition.difficulty ? "/result" : "/q6"}>
+          결과 확인하기
+        </Link>
+      </button>
     </form>
   );
 };

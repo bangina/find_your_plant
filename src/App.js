@@ -117,7 +117,20 @@ function App() {
             </StepBar>
           </Route>
           <Route path="/result">
-            <Result condition={condition} data={DATA} />
+            <Result
+              condition={condition}
+              data={DATA}
+              onClick={() => {
+                setCondition({
+                  space: "",
+                  light: "",
+                  humidity: "",
+                  temperature: "",
+                  size: "",
+                  difficulty: "",
+                });
+              }}
+            />
           </Route>
         </Switch>
       </div>
