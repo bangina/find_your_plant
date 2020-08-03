@@ -140,10 +140,10 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {" "}
+              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
             </span>
-            {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
-            <span>{spaceToString(props.condition.space)}</span>과 환상의 짝궁 🌱
+            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <strong>환상의 짝궁</strong> 🌱
             <span className="medal" role="img" aria-label="medal">
               🥇
             </span>
@@ -300,10 +300,10 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              😄{" "}
+              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
             </span>
-            님의 <span>{spaceToString(props.condition.space)}</span>에
-            추천드리는 반려식물
+            <span>{spaceToString(props.condition.space)}</span>에 추천드리는
+            반려식물
             <span className="medal" role="img" aria-label="medal">
               🥈
             </span>
@@ -463,10 +463,10 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              😄{" "}
+              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
             </span>
-            님의 <span>{spaceToString(props.condition.space)}</span>에
-            추천드리는 반려식물
+            <span>{spaceToString(props.condition.space)}</span>에 추천드리는
+            반려식물
             <span className="medal" role="img" aria-label="medal">
               🥉
             </span>

@@ -6,6 +6,7 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #333;
+  background: #fee3db
 }
 
 li {
@@ -97,12 +98,11 @@ p {
 .container {
   width: 100%;
   max-width: 500px;
-  border-radius: 30px;
   margin: auto;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: #f0efef;
+  background: #f7f6f6;
 }
 
 .img-container,
@@ -131,13 +131,13 @@ p {
 
 .intro-txt {
   margin-bottom: 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #555;
+  color: #444;
 }
 
 .intro-txt strong {
-  color: #24906e;
+  color: #3cba92;
 }
 
 #home .img-container {
@@ -147,11 +147,11 @@ p {
 }
 
 #home .img-container .sm-txt {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 2rem;
   margin-bottom: 1rem;
   display: block;
-  color: #555;
+  color: #333;
   font-weight: normal;
   font-family: "Sunflower", sans-serif;
 }
@@ -416,9 +416,9 @@ p {
 }
 
 .result .medal {
-  font-size: 70px;
+  font-size: 50px;
   display: block;
-  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets {
@@ -429,6 +429,9 @@ p {
   bottom: auto !important;
   background: #3cba92;
   line-height: 35px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .swiper-pagination-bullet {
@@ -438,7 +441,7 @@ p {
 
 .swiper-pagination-bullet::after {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -480,7 +483,12 @@ p {
 
 
 .result .point-txt {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.result .point-txt strong {
+  color: #3cba92;
 }
 
 .result .result-heading {
@@ -630,6 +638,7 @@ p {
   display: block;
   line-height: 2;
   margin: 3rem 0;
+  color: #3cba92;
 }
 
 .result .insta-link svg path {
