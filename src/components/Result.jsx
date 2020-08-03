@@ -238,6 +238,8 @@ const Result = (props) => {
             href={`https://www.instagram.com/explore/tags/${firstPlant.contntsName}`}
             className="point-txt insta-link"
             title="인스타그램 가기"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               width="72"
@@ -399,6 +401,8 @@ const Result = (props) => {
             href={`https://www.instagram.com/explore/tags/${secondPlant.contntsName}`}
             className="point-txt insta-link"
             title="인스타그램 가기"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               width="72"
@@ -557,6 +561,8 @@ const Result = (props) => {
             href={`https://www.instagram.com/explore/tags/${thirdPlant.contntsName}`}
             className="point-txt insta-link"
             title="인스타그램 가기"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               width="72"

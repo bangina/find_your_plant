@@ -58,21 +58,36 @@ p {
 
 .btn-box {
   position: relative;
+
+}
+
+.btn-box .btn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn {
+  border: none;
+  background: none;
+  margin: 0 auto;
+}
+
+.btn>a {
+  display: inline-block;
   color: #fff;
   background: #24906e;
   border: none;
   border-radius: 100px;
   padding: 0 30px;
-  min-width: 250px;
+  width: 100%;
   line-height: 50px;
   font-size: 18px;
-  display: block;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn-wrapper {
