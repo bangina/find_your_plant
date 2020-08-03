@@ -14,7 +14,7 @@ const Button = (props) => {
   }, [props.input]);
 
   return (
-    <Fragment>
+    <div className="btn-box">
       <p className="alert-msg" ref={alertRef}>
         답변을 선택해주세요.
       </p>
@@ -26,7 +26,7 @@ const Button = (props) => {
           </span>
         </Link>
       </button>
-    </Fragment>
+    </div>
   );
 };
 

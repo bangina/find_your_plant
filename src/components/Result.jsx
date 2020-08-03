@@ -386,7 +386,7 @@ const Result = (props) => {
             <li>
               <span className="result-desc">생명력</span>
               <span className="result-desc bold">
-                {secondPlant.anagedemanddoCodeNm}
+                {secondPlant.managedemanddoCodeNm}
               </span>
             </li>
           </ul>
@@ -542,7 +542,7 @@ const Result = (props) => {
             <li>
               <span className="result-desc">생명력</span>
               <span className="result-desc bold">
-                {thirdPlant.anagedemanddoCodeNm}
+                {thirdPlant.managedemanddoCodeNm}
               </span>
             </li>
           </ul>

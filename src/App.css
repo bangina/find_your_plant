@@ -38,8 +38,9 @@ p {
 .show,
 .alert-msg {
   position: absolute;
-  bottom: 9.5rem;
-  left: 3rem;
+  bottom: 6.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -53,6 +54,10 @@ p {
 
 .alert-msg {
   display: none;
+}
+
+.btn-box {
+  position: relative;
 }
 
 .btn {

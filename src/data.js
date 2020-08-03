@@ -33,7 +33,7 @@ const DATA = [{
     {
         "cntntsNo": 12974,
         "contntsName": "군자란",
-        "plntzrNm": "Scarlet Caffir Lily,Kaffir Lily, Clivia, Bus",
+        "plntzrNm": "Scarlet Caffir Lily,Kaffir Lily, Clivia",
         "light": 2,
         "humidity": 2,
         "temperature": 2,
@@ -49,7 +49,7 @@ const DATA = [{
     {
         "cntntsNo": 13186,
         "contntsName": "금전수(돈나무)",
-        "plntzrNm": "Eternity Plant, Fat Boy,Aroid Palm",
+        "plntzrNm": "Eternity Plant, Fat Boy, Aroid Palm",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -113,7 +113,7 @@ const DATA = [{
     {
         "cntntsNo": 14697,
         "contntsName": "드라세나 콤팩타",
-        "plntzrNm": "calypso queen, dwarf bouquet, dracaena compa",
+        "plntzrNm": "calypso queen, dwarf bouquet, dracaena compacta",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -169,7 +169,7 @@ const DATA = [{
         "managelevelCodeNm": 3,
         "watercycleSprngCodeNm": "흙이 많이 말랐을 때 넉넉히 주세요",
         "managedemanddoCodeNm": "보통",
-        "tips": "행잉플랜트(걸이용 식물)로 적합해요.  폭포처럼 아래쪽으로 길게 늘어지는 특성이 있어 거실이나 베란다에 걸어두기 좋아요. 비료를 자주 주어야 길게 늘어지며 자랍니다.줄기는 1~3m까지 자라며, 잎 앞면에 회백색 그물 무늬가 있고 뒷면은 적자색이다. 다른 덩굴식물과는 달리 땅속줄기에 덩이뿌리(물 저장뿌리)가 있어 다습한 환경을 싫어하고, 건조에 강해요.\n 규칙적인 환기가 필요해요. 과습과 과한 물주기는 피해주시고 따뜻한 물을 사용하세요. 여름철에 1~2cm 분홍색 깔때기 모양으로 생긴 독특한 꽃이 피고 꽃이 피는 기간은 긴 편이에요.\n 번식은 줄기 삽목을 주로 이용하는데, 덩굴을 두세 마디씩 잘라서 땅에 꽂거나 덩굴에 생기는 작은 덩이를 묻어두면 싹이 난답니다.",
+        "tips": "행잉플랜트(걸이용 식물)로 적합해요.  폭포처럼 아래쪽으로 길게 늘어지는 특성이 있어 거실이나 베란다에 걸어두기 좋아요. 비료를 자주 주어야 길게 늘어지며 자랍니다.줄기는 1~3m까지 자라며, 잎 앞면에 회백색 그물 무늬가 있고 뒷면은 적자색이에요. 다른 덩굴식물과는 달리 땅속줄기에 덩이뿌리(물 저장뿌리)가 있어 다습한 환경을 싫어하고, 건조에 강해요.\n 규칙적인 환기가 필요해요. 과습과 과한 물주기는 피해주시고 따뜻한 물을 사용하세요. 여름철에 1~2cm 분홍색 깔때기 모양으로 생긴 독특한 꽃이 피고 꽃이 피는 기간은 긴 편이에요.\n 번식은 줄기 삽목을 주로 이용하는데, 덩굴을 두세 마디씩 잘라서 땅에 꽂거나 덩굴에 생기는 작은 덩이를 묻어두면 싹이 난답니다.",
         "toxctyInfo": "",
         "frtlzrInfo": "비료_가끔",
         "postngplaceCodeNm": "거실, 발코니"
@@ -257,7 +257,7 @@ const DATA = [{
     {
         "cntntsNo": 13206,
         "contntsName": "남천",
-        "plntzrNm": "Heavenly bamboo, Sacred Bamboo ",
+        "plntzrNm": "Heavenly bamboo, Sacred Bamboo",
         "light": 3,
         "humidity": 2,
         "temperature": 2,
@@ -265,7 +265,7 @@ const DATA = [{
         "managelevelCodeNm": 2,
         "watercycleSprngCodeNm": "흙 표면이 말랐을 때 넉넉히 물주기",
         "managedemanddoCodeNm": "강함",
-        "tips": "흙의 물빠짐이 좋아야 하고 지나친 과습과 건조는 잎을 황화시켜 떨어지게 해요. 꽃, 열매, 잎, 단풍이 모두 아름답고 실내의 동양적인 분위기에 잘 어울린다.\n 남천의 열매를 남천실이라 하며 해수, 천식, 백일해, 간기능장애 등에 약제로 사용한다.",
+        "tips": "흙의 물빠짐이 좋아야 하고 지나친 과습과 건조는 잎을 황화시켜 떨어지게 해요. 꽃, 열매, 잎, 단풍이 모두 아름답고 실내의 동양적인 분위기에 잘 어울려요.\n 남천의 열매를 남천실이라 하며 해수, 천식, 백일해, 간기능장애 등에 약제로 사용해요.",
         "toxctyInfo": "독성 있을 수 있음(반려동물_아이_조심)",
         "frtlzrInfo": "비료_종종_주세요",
         "postngplaceCodeNm": "거실, 발코니"
@@ -289,7 +289,7 @@ const DATA = [{
     {
         "cntntsNo": 13248,
         "contntsName": "파키라",
-        "plntzrNm": "guiana chestnut,malaba chestnut, provision t",
+        "plntzrNm": "guiana chestnut,malaba chestnut",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -337,7 +337,7 @@ const DATA = [{
     {
         "cntntsNo": 19716,
         "contntsName": "스킨답서스",
-        "plntzrNm": "scindapsus, devils ivy, goden pothos, hunter",
+        "plntzrNm": "scindapsus, devils ivy, goden pothos",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -369,7 +369,7 @@ const DATA = [{
     {
         "cntntsNo": 18659,
         "contntsName": "박쥐란",
-        "plntzrNm": "common staghorn fern, elkhorns",
+        "plntzrNm": "common staghorn fern",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -425,7 +425,7 @@ const DATA = [{
         "managelevelCodeNm": 3,
         "watercycleSprngCodeNm": "흙을 항상 촉촉하게 유지해주세요",
         "managedemanddoCodeNm": "보통",
-        "tips": "연두색, 흰색, 빨강, 분홍색등의 잎색과 줄무늬, 점무늬 등 다양한 잎모양을 지닌 대표적인 잎보기식물이에요. 실내 암모니아 제거능력 우수하고 반그늘을 좋아하며 고온다습한 환경에서 잘 자라요. 응애, 깍지벌레, 온실가루이 병충해를 조심한다.",
+        "tips": "연두색, 흰색, 빨강, 분홍색등의 잎색과 줄무늬, 점무늬 등 다양한 잎모양을 지닌 대표적인 잎보기식물이에요. 실내 암모니아 제거능력 우수하고 반그늘을 좋아하며 고온다습한 환경에서 잘 자라요. 응애, 깍지벌레, 온실가루이 병충해를 조심하세요.",
         "toxctyInfo": "",
         "frtlzrInfo": "비료_종종_주세요",
         "postngplaceCodeNm": "거실, 발코니"
@@ -577,7 +577,7 @@ const DATA = [{
     {
         "cntntsNo": 18660,
         "contntsName": "안스리움",
-        "plntzrNm": "common anthurium, flamingo flower, oilcloth ",
+        "plntzrNm": "common anthurium, flamingo flower",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -608,7 +608,7 @@ const DATA = [{
     },
     {
         "cntntsNo": 12955,
-        "contntsName": "율마(골드크레스트)",
+        "contntsName": "율마",
         "plntzrNm": "Monterey cypress",
         "light": 3,
         "humidity": 2,
@@ -641,7 +641,7 @@ const DATA = [{
     {
         "cntntsNo": 13214,
         "contntsName": "포인세티아",
-        "plntzrNm": "poinsettia, christmas flower, painted leaf, ",
+        "plntzrNm": "poinsettia, christmas flower, painted leaf",
         "light": 3,
         "humidity": 2,
         "temperature": 3,
@@ -689,7 +689,7 @@ const DATA = [{
     {
         "cntntsNo": 19701,
         "contntsName": "소철",
-        "plntzrNm": "cycad, sago cycas, sago palm, Japanese fern ",
+        "plntzrNm": "cycad, sago cycas, sago palm, Japanese fern",
         "light": 2,
         "humidity": 2,
         "temperature": 2,
@@ -697,7 +697,7 @@ const DATA = [{
         "managelevelCodeNm": 2,
         "watercycleSprngCodeNm": "흙 표면이 말랐을 때 넉넉히 물주기",
         "managedemanddoCodeNm": "강함",
-        "tips": "뜰에서 재배가능한 제주도를 제외한 나머지 지역에서는 온실이나 집안에서 가꾸는 관상수예요. 꽃은 노란빛을 띤 색으로 6~8월에 암수딴그루로 펴요. 수꽃차례는 원줄기 끝에 원기둥 모양으로 달리며, 길이 50~60cm, 지름 5~8cm이고, 암꽃차례는 원줄기에 끝에 둥글게 모여 달린다. 열매는 구과로 10월에 익는데 관상용, 식용, 약용으로도 쓰여요.",
+        "tips": "뜰에서 재배가능한 제주도를 제외한 나머지 지역에서는 온실이나 집안에서 가꾸는 관상수예요. 꽃은 노란빛을 띤 색으로 6~8월에 암수딴그루로 펴요. 수꽃차례는 원줄기 끝에 원기둥 모양으로 달리며, 길이 50~60cm, 지름 5~8cm이고, 암꽃차례는 원줄기에 끝에 둥글게 모여 달려요. 열매는 구과로 10월에 익는데 관상용, 식용, 약용으로도 쓰여요.",
         "toxctyInfo": "",
         "frtlzrInfo": "비료_종종_주세요",
         "postngplaceCodeNm": "거실"
@@ -705,7 +705,7 @@ const DATA = [{
     {
         "cntntsNo": 13244,
         "contntsName": "팔손이나무",
-        "plntzrNm": "japanese fatsia, formosa rice tree, paper pl",
+        "plntzrNm": "japanese fatsia, formosa rice tree",
         "light": 2,
         "humidity": 2,
         "temperature": 2,
@@ -737,7 +737,7 @@ const DATA = [{
     {
         "cntntsNo": 19465,
         "contntsName": "아레카야자",
-        "plntzrNm": "areca palm, butterfly palm, golden feather p",
+        "plntzrNm": "areca palm, butterfly palm",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -753,7 +753,7 @@ const DATA = [{
     {
         "cntntsNo": 13002,
         "contntsName": "테이블야자",
-        "plntzrNm": "parlour palm, good luck palm, neanthe bella",
+        "plntzrNm": "parlour palm, good luck palm",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
