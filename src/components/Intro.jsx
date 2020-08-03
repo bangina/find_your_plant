@@ -16,7 +16,7 @@ const Intro = () => {
       </div>
       {/* 하단 이미지&버튼 영역 */}
       <div className="img-container">
-        <img src={"/imgs/main_image_02.svg"} alt="a woman holding plant" />
+        <img src={"./imgs/main_image_02.svg"} alt="a woman holding plant" />
         <button className="btn" type="button">
           <Link to="/q1">
             네! 질문주세요{" "}

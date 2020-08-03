@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QLayout from "./components/QLayout";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Landingpage from "./components/Landingpage";
 import Intro from "./components/Intro";
 import Question1 from "./components/Question1";

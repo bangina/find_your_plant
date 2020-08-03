@@ -116,8 +116,8 @@ const Result = (props) => {
       }
     }
   }, []);
-  const managelevelCodeNmTxt = () => {
-    switch (firstPlant.managelevelCodeNm) {
+  const managelevelCodeNmTxt = (plant) => {
+    switch (plant.managelevelCodeNm) {
       case 2:
         return "초보자 환영 🎉";
       case 3:
@@ -153,7 +153,7 @@ const Result = (props) => {
             <div
               className="img-box"
               style={{
-                "background-image": `url(/imgs/${firstPlant.cntntsNo}.jpg)`,
+                "background-image": `url(./imgs/${firstPlant.cntntsNo}.jpg)`,
               }}
             ></div>
             <p className="plant-name">{firstPlant.contntsName}</p>
@@ -216,7 +216,9 @@ const Result = (props) => {
             <li>
               <span className="result-desc">난이도</span>
               <Rater total={5} rating={firstPlant.managelevelCodeNm} />
-              <span className="point-txt">{managelevelCodeNmTxt()}</span>
+              <span className="point-txt">
+                {managelevelCodeNmTxt(firstPlant)}
+              </span>
             </li>
             <li>
               <span className="result-desc">물주기</span>
@@ -309,7 +311,7 @@ const Result = (props) => {
             <div
               className="img-box"
               style={{
-                "background-image": `url(/imgs/${secondPlant.cntntsNo}.jpg)`,
+                "background-image": `url(./imgs/${secondPlant.cntntsNo}.jpg)`,
               }}
             ></div>
             <p className="plant-name">{secondPlant.contntsName}</p>
@@ -375,7 +377,9 @@ const Result = (props) => {
             <li>
               <span className="result-desc">난이도</span>
               <Rater total={5} rating={secondPlant.managelevelCodeNm} />
-              <span className="point-txt">{managelevelCodeNmTxt()}</span>
+              <span className="point-txt">
+                {managelevelCodeNmTxt(secondPlant)}
+              </span>
             </li>
             <li>
               <span className="result-desc">물주기</span>
@@ -468,7 +472,7 @@ const Result = (props) => {
             <div
               className="img-box"
               style={{
-                "background-image": `url(/imgs/${thirdPlant.cntntsNo}.jpg)`,
+                "background-image": `url(./imgs/${thirdPlant.cntntsNo}.jpg)`,
               }}
             ></div>
             <p className="plant-name">{thirdPlant.contntsName}</p>
@@ -531,7 +535,9 @@ const Result = (props) => {
             <li>
               <span className="result-desc">난이도</span>
               <Rater total={5} rating={thirdPlant.managelevelCodeNm} />
-              <span className="point-txt">{managelevelCodeNmTxt()}</span>
+              <span className="point-txt">
+                {managelevelCodeNmTxt(thirdPlant)}
+              </span>
             </li>
             <li>
               <span className="result-desc">물주기</span>

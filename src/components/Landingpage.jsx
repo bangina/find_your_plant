@@ -11,7 +11,7 @@ const Landingpage = () => {
         <span className="sm-txt" role="img" aria-label="">
           안녕하세요. 솔방울 식물원에 오신 것을 환영합니다.🌞
         </span>
-        <img src={"/imgs/main_image_01.svg"} alt="a woman holding plant" />
+        <img src={"./imgs/main_image_01.svg"} alt="a woman holding plant" />
       </div>
       {/* 하단 텍스트 &버튼 영역 */}
       <div className="txt-container">

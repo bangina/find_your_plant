@@ -49,13 +49,11 @@ const Question6 = (props) => {
           </span>
         </label>
       </div>
-      <a href="result.html" title="다음 질문으로">
-        <Button
-          input={props.condition.difficulty}
-          linkCurr="q6"
-          linkTo="result"
-        />
-      </a>
+      <Button
+        input={props.condition.difficulty}
+        linkCurr="q6"
+        linkTo="result"
+      />
     </form>
   );
 };
