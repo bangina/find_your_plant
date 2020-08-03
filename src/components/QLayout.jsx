@@ -2,7 +2,6 @@ import React from "react";
 
 const QLayout = (props) => {
   const children = props.children || null;
-
   return (
     <div className="container question">
       {/* 최상위 컨테이너 */}

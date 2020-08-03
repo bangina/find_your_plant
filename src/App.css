@@ -200,7 +200,6 @@ p {
 .step {
   background: #3cba92;
   height: 8px;
-  width: calc(100% / 6);
   z-index: 2;
   bottom: 0;
 }
