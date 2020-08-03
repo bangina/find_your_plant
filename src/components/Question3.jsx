@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import Button from "./Button";
 
 const Question3 = (props) => {
   const spaceToString = (space) => {
@@ -14,20 +14,6 @@ const Question3 = (props) => {
         return "공간";
     }
   };
-  const alertRef = useRef();
-  const onBtnClick = (e) => {
-    if (props.condition.humidity == false) {
-      alertRef.current.classList.add("show");
-      alertRef.current.classList.remove("alert-msg");
-      console.log("no");
-    }
-  };
-
-  useEffect(() => {
-    alertRef.current.classList.remove("show");
-    alertRef.current.classList.add("alert-msg");
-  }, [props.condition.humidity]);
-
   return (
     <form action className="form q3">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
@@ -91,18 +77,8 @@ const Question3 = (props) => {
             <span>꽤 건조한 편이에요.</span>
           </label>
         </div>
-        <p className="alert-msg" ref={alertRef}>
-          답변을 선택해주세요.
-        </p>
       </div>
-      <button className="btn" type="button" onClick={onBtnClick}>
-        <Link to={props.condition.humidity ? "/q4" : "/q3"}>
-          다음 질문{" "}
-          <span role="img" aria-label="">
-            👉
-          </span>
-        </Link>
-      </button>
+      <Button input={props.condition.humidity} linkTo="q4" linkCurr="q3" />
     </form>
   );
 };

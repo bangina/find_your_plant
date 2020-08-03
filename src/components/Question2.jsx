@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Question2 = (props) => {
   const spaceToString = (space) => {
@@ -14,19 +15,6 @@ const Question2 = (props) => {
         return "공간";
     }
   };
-  const alertRef = useRef();
-  const onBtnClick = (e) => {
-    if (props.condition.light == false) {
-      alertRef.current.classList.add("show");
-      alertRef.current.classList.remove("alert-msg");
-      console.log("no");
-    }
-  };
-
-  useEffect(() => {
-    alertRef.current.classList.remove("show");
-    alertRef.current.classList.add("alert-msg");
-  }, [props.condition.light]);
 
   return (
     <form action className="form q2">
@@ -98,18 +86,8 @@ const Question2 = (props) => {
             <span>아니요, 한 두 시간 밖에 안 들어와요.</span>
           </label>
         </div>
-        <p className="alert-msg" ref={alertRef}>
-          답변을 선택해주세요.
-        </p>
       </div>
-      <button className="btn" type="button" onClick={onBtnClick}>
-        <Link to={props.condition.light ? "/q3" : "/q2"}>
-          다음 질문{" "}
-          <span role="img" aria-label="">
-            👉
-          </span>
-        </Link>
-      </button>
+      <Button input={props.condition.light} linkTo="q3" linkCurr="q2" />
     </form>
   );
 };

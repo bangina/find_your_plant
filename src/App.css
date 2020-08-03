@@ -35,6 +35,14 @@ p {
   font-weight: bold;
 }
 
+.show,
+.alert-msg {
+  position: absolute;
+  bottom: 9.5rem;
+  left: 3rem;
+  z-index: 1;
+}
+
 .show {
   display: block;
   color: #24906e;
@@ -448,6 +456,7 @@ p {
   width: 240px;
   margin: auto;
   background-size: cover;
+  background-position: center;
 }
 
 

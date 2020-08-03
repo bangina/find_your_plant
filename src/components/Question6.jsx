@@ -1,21 +1,7 @@
-import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import Button from "./Button";
 
 const Question6 = (props) => {
-  const alertRef = useRef();
-
-  const onBtnClick = (e) => {
-    if (props.condition.difficulty == false) {
-      alertRef.current.classList.add("show");
-      alertRef.current.classList.remove("alert-msg");
-    }
-  };
-
-  useEffect(() => {
-    alertRef.current.classList.remove("show");
-    alertRef.current.classList.add("alert-msg");
-  }, [props.condition.difficulty]);
-
   return (
     <form action className="form q6">
       <div className="qa-container normal-radio">
@@ -62,16 +48,13 @@ const Question6 = (props) => {
             식물은 여러 번 키워봤고, 새로운 반려식물을 찾고 있어요.😎
           </span>
         </label>
-        <p className="alert-msg" ref={alertRef}>
-          답변을 선택해주세요.
-        </p>
       </div>
       <a href="result.html" title="다음 질문으로">
-        <button className="btn" type="button" onClick={onBtnClick}>
-          <Link to={props.condition.difficulty ? "/result" : "/q6"}>
-            결과 확인하기
-          </Link>
-        </button>
+        <Button
+          input={props.condition.difficulty}
+          linkCurr="q6"
+          linkTo="result"
+        />
       </a>
     </form>
   );

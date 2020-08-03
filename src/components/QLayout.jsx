@@ -1,6 +1,6 @@
 import React from "react";
 
-const StepBar = (props) => {
+const QLayout = (props) => {
   const children = props.children || null;
 
   return (
@@ -16,4 +16,4 @@ const StepBar = (props) => {
   );
 };
 
-export default StepBar;
+export default QLayout;

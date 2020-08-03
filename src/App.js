@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepBar from "./components/StepBar";
+import QLayout from "./components/QLayout";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landingpage from "./components/Landingpage";
@@ -26,15 +26,12 @@ function App() {
   return (
     <Router>
       <div className="app-frame">
+        {/* switch : 매치되는 주소 하나 찾으면 이제 안 찾도록 함 */}
         <Switch>
-          <Route path="/" exact>
-            <Landingpage />
-          </Route>
-          <Route path="/intro">
-            <Intro />
-          </Route>
+          <Route path="/" component={Landingpage} exact={true}></Route>
+          <Route path="/intro" component={Intro}></Route>
           <Route path="/q1">
-            <StepBar step="1" statMsg="시작할게요">
+            <QLayout step="1" statMsg="시작할게요">
               <Question1
                 condition={condition}
                 onClick={(name, value) => {
@@ -44,10 +41,10 @@ function App() {
                   });
                 }}
               ></Question1>
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/q2">
-            <StepBar step="2" statMsg="밝기 체크!">
+            <QLayout step="2" statMsg="밝기 체크!">
               <Question2
                 space={condition.space}
                 condition={condition}
@@ -58,10 +55,10 @@ function App() {
                   });
                 }}
               />
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/q3">
-            <StepBar step="3" statMsg="습도 체크!">
+            <QLayout step="3" statMsg="습도 체크!">
               <Question3
                 space={condition.space}
                 condition={condition}
@@ -72,10 +69,10 @@ function App() {
                   });
                 }}
               />
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/q4">
-            <StepBar step="4" statMsg="최저 온도 체크!">
+            <QLayout step="4" statMsg="최저 온도 체크!">
               <Question4
                 space={condition.space}
                 condition={condition}
@@ -86,10 +83,10 @@ function App() {
                   });
                 }}
               />
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/q5">
-            <StepBar step="5" statMsg="거의 다 왔어요!">
+            <QLayout step="5" statMsg="거의 다 왔어요!">
               <Question5
                 space={condition.space}
                 condition={condition}
@@ -100,10 +97,10 @@ function App() {
                   });
                 }}
               />
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/q6">
-            <StepBar step="6" statMsg="마지막 질문이에요 👏">
+            <QLayout step="6" statMsg="마지막 질문이에요 👏">
               <Question6
                 space={condition.space}
                 condition={condition}
@@ -114,7 +111,7 @@ function App() {
                   });
                 }}
               />
-            </StepBar>
+            </QLayout>
           </Route>
           <Route path="/result">
             <Result condition={condition} data={DATA} />

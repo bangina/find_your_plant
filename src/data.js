@@ -49,7 +49,7 @@ const DATA = [{
     {
         "cntntsNo": 13186,
         "contntsName": "금전수(돈나무)",
-        "plntzrNm": "Eternity Plant, Fat Boy,Aroid Palm, Arum Fer",
+        "plntzrNm": "Eternity Plant, Fat Boy,Aroid Palm",
         "light": 2,
         "humidity": 2,
         "temperature": 3,
@@ -65,7 +65,7 @@ const DATA = [{
     {
         "cntntsNo": 12963,
         "contntsName": "관음죽",
-        "plntzrNm": "Fan Palms, (Large) Lady Palm, Bamboo Palm, B",
+        "plntzrNm": "Fan Palms, (Large) Lady Palm, Bamboo Palm",
         "light": 2,
         "humidity": 2,
         "temperature": 2,
@@ -81,7 +81,7 @@ const DATA = [{
     {
         "cntntsNo": 16449,
         "contntsName": "몬스테라",
-        "plntzrNm": "swiss cheese plant, window plant, cut leaf p",
+        "plntzrNm": "monstera",
         "light": 2,
         "humidity": 3,
         "temperature": 3,

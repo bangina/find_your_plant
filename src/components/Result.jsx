@@ -117,12 +117,15 @@ const Result = (props) => {
     }
   }, []);
   const managelevelCodeNmTxt = () => {
-    if (firstPlant.managelevelCodeNm == 3) {
-      return "초보자 환영 🎉";
-    } else if (firstPlant.managelevelCodeNm == 4) {
-      return "약간 까다로운 편 🤓";
-    } else {
-      return "고난이도 🧐";
+    switch (firstPlant.managelevelCodeNm) {
+      case 2:
+        return "초보자 환영 🎉";
+      case 3:
+        return "약간 까다로운 편 🤓";
+      case 4:
+        return "고난이도 🧐";
+      default:
+        return "";
     }
   };
   return (
@@ -224,7 +227,7 @@ const Result = (props) => {
             <li>
               <span className="result-desc">생명력</span>
               <span className="result-desc bold">
-                {firstPlant.anagedemanddoCodeNm}
+                {firstPlant.managedemanddoCodeNm}
               </span>
             </li>
           </ul>
