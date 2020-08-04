@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const Question1 = (props) => {
@@ -11,7 +10,12 @@ const Question1 = (props) => {
           <strong>어떤 공간에</strong> 반려식물을 놓을 계획이신가요?
         </p>
         <div className="a-box">
-          <img src={"./imgs/q_1_1.jpg"} alt="사무실" />
+          <div
+            className="img-box"
+            style={{
+              "background-image": `url(./imgs/q_1_1.jpg)`,
+            }}
+          ></div>
           <input
             type="radio"
             id="q-1-1"
@@ -26,7 +30,12 @@ const Question1 = (props) => {
           </label>
         </div>
         <div className="a-box">
-          <img src={"./imgs/q_1_2.jpg"} alt="방" />
+          <div
+            className="img-box"
+            style={{
+              "background-image": `url(./imgs/q_1_2.jpg)`,
+            }}
+          ></div>
           <input
             type="radio"
             id="q-1-2"
@@ -41,7 +50,12 @@ const Question1 = (props) => {
           </label>
         </div>
         <div className="a-box">
-          <img src={"./imgs/q_1_3.jpg"} alt="거실" />
+          <div
+            className="img-box"
+            style={{
+              "background-image": `url(./imgs/q_1_3.jpg)`,
+            }}
+          ></div>
           <input
             type="radio"
             id="q-1-3"

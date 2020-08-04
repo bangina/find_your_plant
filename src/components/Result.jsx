@@ -128,6 +128,37 @@ const Result = (props) => {
         return "";
     }
   };
+  const lightText = (plant) => {
+    switch (plant.light) {
+      case 2:
+        return "햋빛 약간 🌤";
+      case 3:
+        return "햇빛을 좋아해요 🌞";
+      default:
+        return "";
+    }
+  };
+  const humidityText = (plant) => {
+    switch (plant.humidity) {
+      case 2:
+        return "습도 보통 💧";
+      case 3:
+        return "습도 약간 높게 💦";
+      default:
+        return "";
+    }
+  };
+  const sizeText = (plant) => {
+    switch (plant.size) {
+      case 2:
+        return "소~중형 🌱";
+      case 3:
+        return "대형까지 커요 🌴";
+      default:
+        return "";
+    }
+  };
+
   return (
     <Swiper
       spaceBetween={0}
@@ -174,10 +205,11 @@ const Result = (props) => {
               <div className="step-container step-container-thin">
                 <div
                   className="step"
-                  style={{ width: firstPlant.light * 80 }}
+                  style={{ width: firstPlant.light * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{lightText(firstPlant)}</span>
             </li>
             <li>
               <span className="result-desc">습도</span>
@@ -185,18 +217,19 @@ const Result = (props) => {
                 {/* step바 width값 = 50 * 각 level값 */}
                 <div
                   className="step"
-                  style={{ width: firstPlant.humidity * 80 }}
+                  style={{ width: firstPlant.humidity * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{humidityText(firstPlant)}</span>
             </li>
             <li>
               <span className="result-desc">크기</span>
               <div className="step-container step-container-thin">
-                {/* step바 width값 = 50 * 각 level값 */}
-                <div className="step" style={{ width: firstPlant.size * 80 }} />
+                <div className="step" style={{ width: firstPlant.size * 40 }} />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{sizeText(firstPlant)}</span>
             </li>
           </ul>
           <div className="div-line" />
@@ -334,10 +367,11 @@ const Result = (props) => {
               <div className="step-container step-container-thin">
                 <div
                   className="step"
-                  style={{ width: secondPlant.light * 80 }}
+                  style={{ width: secondPlant.light * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{lightText(secondPlant)}</span>
             </li>
             <li>
               <span className="result-desc">습도</span>
@@ -345,10 +379,11 @@ const Result = (props) => {
                 {/* step바 width값 = 50 * 각 level값 */}
                 <div
                   className="step"
-                  style={{ width: secondPlant.humidity * 80 }}
+                  style={{ width: secondPlant.humidity * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{humidityText(secondPlant)}</span>
             </li>
             <li>
               <span className="result-desc">크기</span>
@@ -356,10 +391,11 @@ const Result = (props) => {
                 {/* step바 width값 = 50 * 각 level값 */}
                 <div
                   className="step"
-                  style={{ width: secondPlant.size * 80 }}
+                  style={{ width: secondPlant.size * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{sizeText(secondPlant)}</span>
             </li>
           </ul>
           <div className="div-line" />
@@ -497,10 +533,11 @@ const Result = (props) => {
               <div className="step-container step-container-thin">
                 <div
                   className="step"
-                  style={{ width: thirdPlant.light * 80 }}
+                  style={{ width: thirdPlant.light * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{lightText(thirdPlant)}</span>
             </li>
             <li>
               <span className="result-desc">습도</span>
@@ -508,18 +545,20 @@ const Result = (props) => {
                 {/* step바 width값 = 50 * 각 level값 */}
                 <div
                   className="step"
-                  style={{ width: thirdPlant.humidity * 80 }}
+                  style={{ width: thirdPlant.humidity * 40 }}
                 />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{humidityText(thirdPlant)}</span>
             </li>
             <li>
               <span className="result-desc">크기</span>
               <div className="step-container step-container-thin">
                 {/* step바 width값 = 50 * 각 level값 */}
-                <div className="step" style={{ width: thirdPlant.size * 80 }} />
+                <div className="step" style={{ width: thirdPlant.size * 40 }} />
                 <div className="step-bg" />
               </div>
+              <span className="sm-txt">{sizeText(thirdPlant)}</span>
             </li>
           </ul>
           <div className="div-line" />

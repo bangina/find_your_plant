@@ -52,7 +52,9 @@ const Question2 = (props) => {
 
           {/* lighttdemanddoCodeNm: 3 */}
           <label htmlFor="q-2-1">
-            <span>네, 낮에는 해가 잘 들어오는 편이에요.</span>
+            <span>
+              네, 해가 <strong>잘 들어와요</strong> ☀️
+            </span>
           </label>
         </div>
         <div className="a-box">
@@ -83,7 +85,9 @@ const Question2 = (props) => {
 
           {/* lighttdemanddoCodeNm: 2 */}
           <label htmlFor="q-2-2">
-            <span>아니요, 한 두 시간 밖에 안 들어와요.</span>
+            <span>
+              아니요, 많이 <strong>안 들어와요</strong> ⛅️
+            </span>
           </label>
         </div>
       </div>

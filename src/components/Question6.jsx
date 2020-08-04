@@ -5,7 +5,9 @@ const Question6 = (props) => {
   return (
     <form action className="form q6">
       <div className="qa-container normal-radio">
-        <p className="q-txt">식물을 키워보신 경험이 있나요?</p>
+        <p className="q-txt">
+          식물을 <strong>키워본 경험</strong>이 있나요?
+        </p>
         <input
           type="radio"
           id="q-6-1"
@@ -17,7 +19,7 @@ const Question6 = (props) => {
         />
         <label htmlFor="q-6-1">
           <span role="img" aria-label="">
-            아니요, 이번이 처음이에요! 👶
+            아니요, 이번이 <strong>처음</strong>이에요! 👶
           </span>
         </label>
         <input
@@ -31,7 +33,8 @@ const Question6 = (props) => {
         />
         <label htmlFor="q-6-2">
           <span role="img" aria-label="">
-            전에 몇 번 키워봤어요. 그래도 아직은 익숙치 않아요. 🤓
+            전에 <strong>몇 번</strong> 키워봤어요. 그래도 아직은 익숙치 않아요.
+            🤓
           </span>
         </label>
         <input
@@ -45,7 +48,8 @@ const Question6 = (props) => {
         />
         <label htmlFor="q-6-3">
           <span role="img" aria-label="">
-            식물은 여러 번 키워봤고, 새로운 반려식물을 찾고 있어요.😎
+            식물은 <strong>여러 번</strong> 키워봤고, 새로운 반려식물을 찾고
+            있어요.😎
           </span>
         </label>
       </div>

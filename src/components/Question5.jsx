@@ -7,7 +7,7 @@ const Question5 = (props) => {
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">
-          <strong>크기가 큰 식물</strong>도 함께 추천해드릴까요?
+          <strong>큰 식물</strong>도 함께 추천해드릴까요?
         </p>
         <div className="a-box">
           <input
@@ -34,7 +34,10 @@ const Question5 = (props) => {
 
           {/* size : 3 */}
           <label htmlFor="q-5-1">
-            <span>네, 큰 식물도 함께 추천해주세요.</span>
+            <span>
+              네, <strong className="point-txt">대형 식물</strong>도 함께
+              추천해주세요.
+            </span>
           </label>
         </div>
         <div className="a-box">
@@ -60,7 +63,10 @@ const Question5 = (props) => {
           </svg>
           {/* size : 2 */}
           <label htmlFor="q-5-2">
-            <span>아니요, 크지 않은 식물만 보여주세요.</span>
+            <span>
+              아니요, <strong className="point-txt">소형/중형 식물</strong>만
+              보여주세요.
+            </span>
           </label>
         </div>
       </div>
