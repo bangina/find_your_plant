@@ -302,8 +302,8 @@ const Result = (props) => {
             <span role="img" aria-label="smiley face">
               {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(props.condition.space)}</span>에 추천드리는
-            반려식물
+            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥈
             </span>
@@ -465,8 +465,8 @@ const Result = (props) => {
             <span role="img" aria-label="smiley face">
               {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(props.condition.space)}</span>에 추천드리는
-            반려식물
+            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥉
             </span>
