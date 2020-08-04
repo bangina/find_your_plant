@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import { useSelector, useDispatch } from "react-redux";
+import { insertInput } from "../redux/condition";
 
 const Question3 = (props) => {
-  const spaceToString = (space) => {
-    switch (space) {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
       case "1":
         return "사무실";
       case "2":
@@ -14,13 +27,21 @@ const Question3 = (props) => {
         return "공간";
     }
   };
+  const onConditionChange = (e) => {
+    setCondition({ ...condition, [e.target.name]: e.target.value });
+  };
+  const dispatch = useDispatch();
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    dispatch(insertInput("humidity", condition.humidity));
+  };
   return (
     <form action className="form q3">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">
-          <span>{spaceToString(props.space)}</span>의 <strong>습도</strong>는
-          어떤가요?
+          <span>{spaceToString(globalCondition.space)}</span>의{" "}
+          <strong>습도</strong>는 어떤가요?
         </p>
         <div className="a-box">
           <input
@@ -28,9 +49,7 @@ const Question3 = (props) => {
             id="q-3-1"
             name="humidity"
             value="3"
-            onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
-            }}
+            onClick={onConditionChange}
           />
           <svg
             id="Capa_1"
@@ -58,9 +77,7 @@ const Question3 = (props) => {
             id="q-3-2"
             name="humidity"
             value="2"
-            onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
-            }}
+            onClick={onConditionChange}
           />
           <svg
             id="Layer_1"
@@ -78,7 +95,8 @@ const Question3 = (props) => {
           </label>
         </div>
       </div>
-      <Button input={props.condition.humidity} linkTo="q4" linkCurr="q3" />
+      <button onClick={onBtnClick}>버튼</button>
+      <Button input={condition.humidity} linkTo="q4" linkCurr="q3" />
     </form>
   );
 };

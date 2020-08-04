@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import { useSelector, useDispatch } from "react-redux";
+import { insertInput } from "../redux/condition";
 
-const Question6 = (props) => {
+const Question6 = () => {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
+      case "1":
+        return "사무실";
+      case "2":
+        return "방";
+      case "3":
+        return "거실";
+      default:
+        return "공간";
+    }
+  };
+
+  const onConditionChange = (e) => {
+    setCondition({ ...condition, [e.target.name]: e.target.value });
+  };
+  const dispatch = useDispatch();
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    dispatch(insertInput("difficulty", condition.difficulty));
+  };
   return (
     <form action className="form q6">
       <div className="qa-container normal-radio">
@@ -13,9 +47,7 @@ const Question6 = (props) => {
           id="q-6-1"
           name="difficulty"
           value="1"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
         <label htmlFor="q-6-1">
           <span role="img" aria-label="">
@@ -27,14 +59,11 @@ const Question6 = (props) => {
           id="q-6-2"
           name="difficulty"
           value="2"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
         <label htmlFor="q-6-2">
           <span role="img" aria-label="">
-            전에 <strong>몇 번</strong> 키워봤어요. 그래도 아직은 익숙치 않아요.
-            🤓
+            전에 <strong>몇 번</strong> 키워봤어요. 🤓
           </span>
         </label>
         <input
@@ -42,9 +71,7 @@ const Question6 = (props) => {
           id="q-6-3"
           name="difficulty"
           value="3"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
         <label htmlFor="q-6-3">
           <span role="img" aria-label="">
@@ -53,11 +80,8 @@ const Question6 = (props) => {
           </span>
         </label>
       </div>
-      <Button
-        input={props.condition.difficulty}
-        linkCurr="q6"
-        linkTo="result"
-      />
+      <button onClick={onBtnClick}>다음</button>
+      <Button input={condition.difficulty} linkCurr="q6" linkTo="result" />
     </form>
   );
 };

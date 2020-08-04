@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import { useSelector, useDispatch } from "react-redux";
+import { insertInput } from "../redux/condition";
 
-const Question5 = (props) => {
+const Question5 = () => {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
+      case "1":
+        return "사무실";
+      case "2":
+        return "방";
+      case "3":
+        return "거실";
+      default:
+        return "공간";
+    }
+  };
+
+  const onConditionChange = (e) => {
+    setCondition({ ...condition, [e.target.name]: e.target.value });
+  };
+  const dispatch = useDispatch();
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    dispatch(insertInput("size", condition.size));
+  };
   return (
     <form action className="form q5">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
@@ -15,9 +49,7 @@ const Question5 = (props) => {
             id="q-5-1"
             name="size"
             value="3"
-            onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
-            }}
+            onClick={onConditionChange}
           />
           <svg
             width="126"
@@ -46,9 +78,7 @@ const Question5 = (props) => {
             id="q-5-2"
             name="size"
             value="2"
-            onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
-            }}
+            onClick={onConditionChange}
           />
           <svg
             height="418pt"
@@ -70,7 +100,8 @@ const Question5 = (props) => {
           </label>
         </div>
       </div>
-      <Button input={props.condition.size} linkTo="q6" linkCurr="q5" />
+      <button onClick={onBtnClick}>다음</button>
+      <Button input={condition.size} linkTo="q6" linkCurr="q5" />
     </form>
   );
 };

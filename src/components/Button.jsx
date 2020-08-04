@@ -1,7 +1,9 @@
-import React, { useRef, Fragment, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 const Button = (props) => {
   const alertRef = useRef();
+  // const dispatch = useDispatch();
   const onBtnClick = (e) => {
     if (props.input == false) {
       alertRef.current.classList.add("show");

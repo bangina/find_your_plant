@@ -1,10 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import Button from "./Button";
+import { useSelector, useDispatch } from "react-redux";
+import { insertInput } from "../redux/condition";
 
-const Question2 = (props) => {
-  const spaceToString = (space) => {
-    switch (space) {
+const Question2 = () => {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
       case "1":
         return "사무실";
       case "2":
@@ -16,13 +28,21 @@ const Question2 = (props) => {
     }
   };
 
+  const onConditionChange = (e) => {
+    setCondition({ ...condition, [e.target.name]: e.target.value });
+  };
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    dispatch(insertInput("light", condition.light));
+  };
+  const dispatch = useDispatch();
   return (
     <form action className="form q2">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container">
         <p className="q-txt">
-          <span>{spaceToString(props.space)}</span>에 <strong>햇빛</strong>이 잘
-          드는 편인가요?
+          <span>{spaceToString(condition.space)}</span>에 <strong>햇빛</strong>
+          이 잘 드는 편인가요?
         </p>
         <div className="a-box">
           <input
@@ -31,7 +51,7 @@ const Question2 = (props) => {
             name="light"
             value="3"
             onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
+              onConditionChange(e);
             }}
           />
           <svg
@@ -64,7 +84,7 @@ const Question2 = (props) => {
             name="light"
             value="2"
             onClick={(e) => {
-              props.onClick(e.target.name, e.target.value);
+              onConditionChange(e);
             }}
           />
           <svg
@@ -91,7 +111,8 @@ const Question2 = (props) => {
           </label>
         </div>
       </div>
-      <Button input={props.condition.light} linkTo="q3" linkCurr="q2" />
+      <button onClick={onBtnClick}>버튼</button>
+      <Button input={condition.light} linkTo="q3" linkCurr="q2" />
     </form>
   );
 };

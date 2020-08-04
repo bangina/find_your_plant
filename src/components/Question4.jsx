@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import { useSelector, useDispatch } from "react-redux";
+import { insertInput } from "../redux/condition";
 
-const Question4 = (props) => {
-  const spaceToString = (space) => {
-    switch (space) {
+const Question4 = () => {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
       case "1":
         return "사무실";
       case "2":
@@ -14,23 +27,28 @@ const Question4 = (props) => {
         return "공간";
     }
   };
-
+  const onConditionChange = (e) => {
+    setCondition({ ...condition, [e.target.name]: e.target.value });
+  };
+  const dispatch = useDispatch();
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    dispatch(insertInput("temperature", condition.temperature));
+  };
   return (
     <form action className="form q4">
       {/* 질문 & 선택지 섹션 - 동그란 하얀 배경 */}
       <div className="qa-container normal-radio">
         <p className="q-txt">
-          <span>{spaceToString(props.space)}</span>은 <strong>겨울</strong>에
-          얼마나 추워지나요?
+          <span>{spaceToString(globalCondition.space)}</span>은{" "}
+          <strong>겨울</strong>에 얼마나 추워지나요?
         </p>
         <input
           type="radio"
           id="q-4-3"
           name="temperature"
           value="3"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
         <label htmlFor="q-4-3">
           {/* winterLwetTpCodeNm : 3 */}
@@ -42,12 +60,9 @@ const Question4 = (props) => {
           id="q-4-2"
           name="temperature"
           value="2"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
         <label htmlFor="q-4-2">
-          {/* winterLwetTpCodeNm : 2 */}
           <span>종종 10도 이하로 떨어져요. 🍦</span>
         </label>
         <input
@@ -55,16 +70,14 @@ const Question4 = (props) => {
           id="q-4-1"
           name="temperature"
           value="1"
-          onClick={(e) => {
-            props.onClick(e.target.name, e.target.value);
-          }}
+          onClick={onConditionChange}
         />
-        {/* winterLwetTpCodeNm : 1 */}
         <label htmlFor="q-4-1">
           <span>추울 때는 영하로도 떨어져요. 🥶</span>
         </label>
       </div>
-      <Button input={props.condition.temperature} linkTo="q5" linkCurr="q4" />
+      <button onClick={onBtnClick}>버튼</button>
+      <Button input={condition.temperature} linkTo="q5" linkCurr="q4" />
     </form>
   );
 };

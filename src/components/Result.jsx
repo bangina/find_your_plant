@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import DATA from "../data";
+
 // 별점 모듈
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
@@ -12,23 +16,34 @@ import "swiper/swiper.scss";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-const Result = (props) => {
+const Result = () => {
+  const [condition, setCondition] = useState({
+    step: 1,
+    space: "",
+    light: "",
+    humidity: "",
+    temperature: "",
+    size: "",
+    difficulty: "",
+  });
+
   const [firstPlant, setFirstPlant] = useState({});
   const [secondPlant, setSecondPlant] = useState({});
   const [thirdPlant, setThirdPlant] = useState({});
 
   const setPlants = (cntntsNo1, cntntsNo2, cntntsNo3) => {
-    const nextData1 = props.data.filter((data) => data.cntntsNo === cntntsNo1);
-    const nextData2 = props.data.filter((data) => data.cntntsNo === cntntsNo2);
-    const nextData3 = props.data.filter((data) => data.cntntsNo === cntntsNo3);
+    const nextData1 = DATA.filter((data) => data.cntntsNo === cntntsNo1);
+    const nextData2 = DATA.filter((data) => data.cntntsNo === cntntsNo2);
+    const nextData3 = DATA.filter((data) => data.cntntsNo === cntntsNo3);
 
     setFirstPlant(nextData1[0]);
     setSecondPlant(nextData2[0]);
     setThirdPlant(nextData3[0]);
   };
 
-  const spaceToString = (space) => {
-    switch (space) {
+  const globalCondition = useSelector((state) => state.condition);
+  const spaceToString = () => {
+    switch (globalCondition.space) {
       case "1":
         return "사무실";
       case "2":
@@ -54,15 +69,15 @@ const Result = (props) => {
   };
 
   useEffect(() => {
-    const { light, humidity, temperature, size } = props.condition;
+    const { light, humidity, temperature, size } = globalCondition;
 
-    const answerz = [light, humidity, temperature, size];
-    const answerzString = answerz.join();
+    const answers = [light, humidity, temperature, size];
+    const answersString = answers.join();
 
     if (temperature === "1") {
       setPlants(14663, 13206, 12963);
     } else {
-      switch (answerzString) {
+      switch (answersString) {
         case "2,2,2,2":
           setPlants(14913, 19451, 19714);
           break;
@@ -171,9 +186,9 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(condition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <span>{spaceToString(condition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong> 🌱
             <span className="medal" role="img" aria-label="medal">
               🥇
@@ -313,12 +328,7 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button
-            className="btn"
-            onClick={() => {
-              props.onClick();
-            }}
-          >
+          <button className="btn">
             <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
@@ -333,9 +343,9 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(condition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <span>{spaceToString(condition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥈
@@ -479,12 +489,7 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button
-            className="btn"
-            onClick={() => {
-              props.onClick();
-            }}
-          >
+          <button className="btn">
             <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
@@ -499,9 +504,9 @@ const Result = (props) => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(props.condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(condition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(props.condition.space)}</span>과{" "}
+            <span>{spaceToString(condition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥉
@@ -642,12 +647,7 @@ const Result = (props) => {
             </svg>
           </a>
           {/* 다른 식물 후보 */}
-          <button
-            className="btn"
-            onClick={() => {
-              props.onClick();
-            }}
-          >
+          <button className="btn">
             <Link to="/q1">
               테스트 다시 하기
               <span role="img" aria-label="">
