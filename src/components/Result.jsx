@@ -17,16 +17,6 @@ import "swiper/swiper.scss";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Result = () => {
-  const [condition, setCondition] = useState({
-    step: 1,
-    space: "",
-    light: "",
-    humidity: "",
-    temperature: "",
-    size: "",
-    difficulty: "",
-  });
-
   const [firstPlant, setFirstPlant] = useState({});
   const [secondPlant, setSecondPlant] = useState({});
   const [thirdPlant, setThirdPlant] = useState({});
@@ -186,9 +176,9 @@ const Result = () => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(globalCondition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(condition.space)}</span>과{" "}
+            <span>{spaceToString(globalCondition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong> 🌱
             <span className="medal" role="img" aria-label="medal">
               🥇
@@ -343,9 +333,9 @@ const Result = () => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(globalCondition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(condition.space)}</span>과{" "}
+            <span>{spaceToString(globalCondition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥈
@@ -504,9 +494,9 @@ const Result = () => {
           {/* 최상위 컨테이너 */}
           <p className="point-txt">
             <span role="img" aria-label="smiley face">
-              {difficultyToEmoji(condition.difficulty)} 님의{" "}
+              {difficultyToEmoji(globalCondition.difficulty)} 님의{" "}
             </span>
-            <span>{spaceToString(condition.space)}</span>과{" "}
+            <span>{spaceToString(globalCondition.space)}</span>과{" "}
             <strong>환상의 짝궁</strong>
             <span className="medal" role="img" aria-label="medal">
               🥉

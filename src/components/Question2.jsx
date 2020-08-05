@@ -5,7 +5,7 @@ import { insertInput, increaseStep } from "../redux/condition";
 
 const Question2 = () => {
   const [condition, setCondition] = useState({
-    step: 1,
+    step: "",
     space: "",
     light: "",
     humidity: "",
@@ -34,7 +34,9 @@ const Question2 = () => {
   const onBtnClick = (e) => {
     e.preventDefault();
     dispatch(insertInput("light", condition.light));
-    dispatch(increaseStep());
+    if (condition.light !== "") {
+      dispatch(increaseStep());
+    }
   };
   const dispatch = useDispatch();
   return (
