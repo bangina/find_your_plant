@@ -742,7 +742,7 @@ p {
 /* 모바일  */
 @media only screen and (max-width: 400px) {
   .result .conditions .step-container-thin {
-    width: 150px;
+    width: 135px;
   }
 }
 
@@ -770,6 +770,7 @@ p {
     background: #f07a7a;
   }
 }
+
 @media only screen and (max-width: 600px) {
 
   .container,
