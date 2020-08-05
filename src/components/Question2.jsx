@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useSelector, useDispatch } from "react-redux";
-import { insertInput } from "../redux/condition";
+import { insertInput, increaseStep } from "../redux/condition";
 
 const Question2 = () => {
   const [condition, setCondition] = useState({
@@ -34,6 +34,7 @@ const Question2 = () => {
   const onBtnClick = (e) => {
     e.preventDefault();
     dispatch(insertInput("light", condition.light));
+    dispatch(increaseStep());
   };
   const dispatch = useDispatch();
   return (

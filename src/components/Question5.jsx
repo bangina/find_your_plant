@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useSelector, useDispatch } from "react-redux";
-import { insertInput } from "../redux/condition";
+import { insertInput, increaseStep } from "../redux/condition";
 
 const Question5 = () => {
   const [condition, setCondition] = useState({
@@ -35,6 +35,7 @@ const Question5 = () => {
   const onBtnClick = (e) => {
     e.preventDefault();
     dispatch(insertInput("size", condition.size));
+    dispatch(increaseStep());
   };
   return (
     <form action className="form q5">

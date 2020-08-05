@@ -130,7 +130,7 @@ const Result = () => {
           break;
       }
     }
-  }, []);
+  }, [globalCondition]);
   const managelevelCodeNmTxt = (plant) => {
     switch (plant.managelevelCodeNm) {
       case 2:

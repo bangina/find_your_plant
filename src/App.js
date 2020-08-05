@@ -23,32 +23,32 @@ function App() {
             <Route path="/" component={Landingpage} exact={true}></Route>
             <Route path="/intro" component={Intro}></Route>
             <Route path="/q1">
-              <QLayout step="1" statMsg="시작할게요">
+              <QLayout>
                 <Question1 />
               </QLayout>
             </Route>
             <Route path="/q2">
-              <QLayout step="2" statMsg="밝기 체크!">
+              <QLayout>
                 <Question2 />
               </QLayout>
             </Route>
             <Route path="/q3">
-              <QLayout step="3" statMsg="습도 체크!">
+              <QLayout>
                 <Question3 />
               </QLayout>
             </Route>
             <Route path="/q4">
-              <QLayout step="4" statMsg="최저 온도 체크!">
+              <QLayout>
                 <Question4 />
               </QLayout>
             </Route>
             <Route path="/q5">
-              <QLayout step="5" statMsg="거의 다 왔어요!">
+              <QLayout>
                 <Question5 />
               </QLayout>
             </Route>
             <Route path="/q6">
-              <QLayout step="6" statMsg="마지막 질문이에요 👏">
+              <QLayout>
                 <Question6 />
               </QLayout>
             </Route>
