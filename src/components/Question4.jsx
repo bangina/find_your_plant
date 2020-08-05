@@ -76,8 +76,13 @@ const Question4 = () => {
           <span>추울 때는 영하로도 떨어져요. 🥶</span>
         </label>
       </div>
-      <button onClick={onBtnClick}>버튼</button>
-      <Button input={condition.temperature} linkTo="q5" linkCurr="q4" />
+      <div onClick={onBtnClick}>
+        <Button
+          input={condition.temperature} //유효성 검사용
+          linkTo="q5"
+          linkCurr="q4"
+        />
+      </div>
     </form>
   );
 };

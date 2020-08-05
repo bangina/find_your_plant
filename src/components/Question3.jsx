@@ -95,8 +95,13 @@ const Question3 = (props) => {
           </label>
         </div>
       </div>
-      <button onClick={onBtnClick}>버튼</button>
-      <Button input={condition.humidity} linkTo="q4" linkCurr="q3" />
+      <div onClick={onBtnClick}>
+        <Button
+          input={condition.humidity} //유효성 검사용
+          linkTo="q4"
+          linkCurr="q3"
+        />
+      </div>
     </form>
   );
 };

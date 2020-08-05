@@ -111,8 +111,13 @@ const Question2 = () => {
           </label>
         </div>
       </div>
-      <button onClick={onBtnClick}>버튼</button>
-      <Button input={condition.light} linkTo="q3" linkCurr="q2" />
+      <div onClick={onBtnClick}>
+        <Button
+          input={condition.light} //유효성 검사용
+          linkTo="q3"
+          linkCurr="q2"
+        />
+      </div>
     </form>
   );
 };

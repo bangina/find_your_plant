@@ -80,8 +80,13 @@ const Question6 = () => {
           </span>
         </label>
       </div>
-      <button onClick={onBtnClick}>다음</button>
-      <Button input={condition.difficulty} linkCurr="q6" linkTo="result" />
+      <div onClick={onBtnClick}>
+        <Button
+          input={condition.difficulty} //유효성 검사용
+          linkTo="result"
+          linkCurr="q6"
+        />
+      </div>
     </form>
   );
 };
