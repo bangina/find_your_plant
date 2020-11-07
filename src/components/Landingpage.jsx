@@ -9,8 +9,7 @@ const Landingpage = () => {
       {/* 상단 이미지 영역 */}
       <div className="img-container">
         <span className="sm-txt" role="img" aria-label="">
-          솔방울 농장에 오신 것을 환영합니다.
-          {/* 솔방울 식물원에 오신 것을 환영합니다.🌞 */}
+          솔방울 식물원에 오신 것을 환영합니다.🌞
         </span>
         <img src={"./imgs/main_image_01.svg"} alt="a woman holding plant" />
       </div>
